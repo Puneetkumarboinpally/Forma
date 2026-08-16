@@ -1,1 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+:root {
+  /* ================================
+     FORMA LIVING · LIGHT THEME
+     ================================ */
+
+  --background: #f7f4ee;
+  --foreground: #242321;
+
+  --surface: #fcfbf8;
+  --surface-muted: #e8e3da;
+  --surface-subtle: #eeeae3;
+
+  --border: #d8d1c5;
+  --border-strong: #c8c0b3;
+
+  --text-primary: #242321;
+  --text-secondary: #716d65;
+  --text-muted: #a59e92;
+
+  --accent: #737765;
+  --accent-hover: #555a4d;
+  --accent-foreground: #f7f4ee;
+
+  --clay: #a47762;
+
+  --success: #66745a;
+  --warning: #a98252;
+  --error: #9a5d55;
+  --info: #687783;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+/* ================================
+   FORMA LIVING · DARK THEME
+   ================================ */
+
+[data-theme="dark"] {
+  --background: #242321;
+  --foreground: #f7f4ee;
+
+  --surface: #2c2b28;
+  --surface-muted: #35342f;
+  --surface-subtle: #302f2c;
+
+  --border: #4a4841;
+  --border-strong: #5a574f;
+
+  --text-primary: #f7f4ee;
+  --text-secondary: #c4beb3;
+  --text-muted: #918b81;
+
+  --accent: #929782;
+  --accent-hover: #a7ad96;
+  --accent-foreground: #242321;
+
+  --clay: #b88972;
+
+  --success: #82936e;
+  --warning: #c19a67;
+  --error: #bd756b;
+  --info: #8798a3;
+}
+
+@theme {
+  /* =================================
+     COLORS
+     ================================= */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-subtle: var(--surface-subtle);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-clay: var(--clay);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* =================================
+     FONTS
+     ================================= */
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  /* =================================
+     RADIUS
+     ================================= */
+
+  --radius-forma-sm: 2px;
+  --radius-forma-md: 4px;
+
+  /* =================================
+     CONTAINER
+     ================================= */
+
+  --container-forma: 1280px;
+
+  /* =================================
+     ANIMATION
+     ================================= */
+
+  --transition-forma-fast: 180ms;
+  --transition-forma-normal: 250ms;
+}
+
+.nav-link {
+  @apply font-semibold cursor-pointer py-1;
+}
+.nav-link ::after {
+  content: "";
+
+}
