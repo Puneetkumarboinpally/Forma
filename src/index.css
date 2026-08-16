@@ -122,17 +122,27 @@ body {
   --container-forma: 1280px;
 
   /* =================================
-     ANIMATION
+      MEDIA QUERIES
      ================================= */
 
-  --transition-forma-fast: 180ms;
-  --transition-forma-normal: 250ms;
+  --breakpoint-small-phone: 375px;
+  --breakpoint-phone: 425px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
 }
 
 .nav-link {
-  @apply font-semibold cursor-pointer py-1;
+  @apply relative font-semibold cursor-pointer py-1 max-tablet:text-sm;
 }
-.nav-link ::after {
+.nav-link::after {
   content: "";
-
+  display: block;
+  height: 3px;
+  width: 0;
+  border-radius: 2px;
+  background-color: var(--accent);
+  transition: width 0.8s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
 }

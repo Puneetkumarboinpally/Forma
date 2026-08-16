@@ -1,7 +1,9 @@
 import { Moon, Search, ShoppingBag, Sun } from "lucide-react";
-import { NavLink } from "react-router-dom";
 import { useThemeStore } from "../store/themeStore";
 import { useEffect } from "react";
+import NavMenu from "./NavMenu";
+import MobileMenu from "./MobileMenu";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const theme = useThemeStore((state) => state.theme);
   const toggle = useThemeStore((state) => state.toggleTheme);
@@ -11,23 +13,21 @@ const Navbar = () => {
   }, [theme]);
   return (
     <div className="flex justify-between items-center h-16 max-w-container p-4 bg-background border-b border-b-border">
-      <div className="flex gap-4 items-center">
-        <img
-          className="h-8 w-8 object-center"
-          src="/src/assets/logo.png"
-          alt="Brand Logo"
-        />
-        <h2 className="text-2xl font-bold">FORMA</h2>
+      {/* LOGO CONTAINER */}
+
+      <div className="flex items-center">
+        <Link to={"/"} className="text-xl font-bold">
+          FORMA
+        </Link>
+        {/* NAV MENU CONTAINER */}
       </div>
-      <div className="flex gap-4">
-        <NavLink to={"/"} className="nav-link">SHOP</NavLink>
-        <NavLink to={"/collection"} className="nav-link">COLLECTIONS</NavLink>
-        <NavLink to={"/living-room"} className="nav-link">LIVING ROOM</NavLink>
-        <NavLink to={"/bedroom"} className="nav-link">BEDROOM</NavLink>
-        <NavLink to={"/dinning"} className="nav-link">DINNING</NavLink>
-        <NavLink to={"/lighting"} className="nav-link">LIGHTING</NavLink>
+      <div>
+        <NavMenu />
       </div>
-      <div className="flex gap-4">
+
+      {/* NAVBAR CTA CONTAINER */}
+
+      <div className="flex gap-4 tablet:gap-2">
         <div>
           <Search />
         </div>
@@ -37,6 +37,10 @@ const Navbar = () => {
         <button onClick={toggle}>
           {theme === "dark" ? <Sun /> : <Moon />}
         </button>
+        {/* ---- */}
+        <div>
+          <MobileMenu />
+        </div>
       </div>
     </div>
   );
