@@ -106,7 +106,7 @@ body {
      ================================= */
 
   --font-display: "Cormorant Garamond", serif;
-  --font-sans: "Manrope", sans-serif;
+  --font-body: "Manrope", sans-serif;
 
   /* =================================
      RADIUS
@@ -122,17 +122,51 @@ body {
   --container-forma: 1280px;
 
   /* =================================
-     ANIMATION
+      MEDIA QUERIES
      ================================= */
 
-  --transition-forma-fast: 180ms;
-  --transition-forma-normal: 250ms;
+  --breakpoint-small-phone: 375px;
+  --breakpoint-phone: 425px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
 }
 
-.nav-link {
-  @apply font-semibold cursor-pointer py-1;
+.nav-link-styles {
+  @apply relative w-fit font-bold cursor-pointer;
+  font-family: var(--font-body);
 }
-.nav-link ::after {
+.nav-link-styles::after {
   content: "";
+  @apply block h-[3px] w-full origin-left scale-x-0 rounded bg-[var(--accent)] transition-transform duration-500 ease-in-out;
+}
+.nav-link-styles:hover::after {
+  @apply scale-x-100;
+}
+.hero-section {
+  @apply relative h-screen w-full bg-cover bg-center bg-no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&h=1080&q=85");
+}
 
+.explore-section {
+  @apply relative h-90 w-full overflow-hidden rounded-lg;
+}
+.explore-section::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0 opacity-1;
+}
+.explore-img {
+  @apply h-full w-full cursor-pointer object-cover  transition-transform duration-500 hover:scale-110;
+}
+
+.explore-section .name {
+  content: "";
+  @apply absolute left-5 bottom-5 z-20 font-medium text-2xl text-white;
+}
+.explore-section .arrow {
+  @apply absolute right-5 bottom-5 z-20 text-3xl text-white opacity-0 transition-transform duration-300;
+}
+.explore-section .arrow:hover {
+  opacity: 1;
 }
