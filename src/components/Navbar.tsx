@@ -13,7 +13,7 @@ const Navbar = () => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
   return (
-    <div className="flex justify-between items-center h-16 max-w-container p-4 bg-background border-b border-b-border">
+    <div className="flex justify-between items-center h-16 max-w-container p-4 bg-surface border-b border-b-border">
       {/* --- NAVBAR LOGO SECTION ---*/}
       <div className="flex items-center">
         <Link
@@ -31,7 +31,7 @@ const Navbar = () => {
             key={link.id}
             to={link.path}
             className={({ isActive }) =>
-              `nav-link-styles max-laptop:hidden ${isActive ? "text-clay" : "text-secondary"}`
+              `nav-link-styles max-laptop:hidden ${isActive ? "text-accent" : "text-secondary"}`
             }
           >
             {link.name}

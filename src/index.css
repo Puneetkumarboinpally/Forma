@@ -142,3 +142,31 @@ body {
 .nav-link-styles:hover::after {
   @apply scale-x-100;
 }
+.hero-section {
+  @apply relative h-screen w-full bg-cover bg-center bg-no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&h=1080&q=85");
+}
+
+.explore-section {
+  @apply relative h-90 w-full overflow-hidden rounded-lg;
+}
+.explore-section::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0 opacity-1;
+}
+.explore-img {
+  @apply h-full w-full cursor-pointer object-cover  transition-transform duration-500 hover:scale-110;
+}
+
+.explore-section .name {
+  content: "";
+  @apply absolute left-5 bottom-5 z-20 font-medium text-2xl text-white;
+}
+.explore-section .arrow {
+  @apply absolute right-5 bottom-5 z-20 text-3xl text-white opacity-0 transition-transform duration-300;
+}
+.explore-section .arrow:hover {
+  opacity: 1;
+}

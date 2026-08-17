@@ -2,7 +2,7 @@ import { Link, Globe2 } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className=" w-full bg-background border-t border-t-border">
+    <div className=" w-full bg-surface border-t border-t-border">
       {/* ---FOOTER TOP SECTION --- */}
       <div className="h-full w-full grid tablet:grid-cols-2 laptop:grid-cols-4 gap-12 p-16">
         {/* ---FOOTER TOP 1ST CONTAINER --- */}
