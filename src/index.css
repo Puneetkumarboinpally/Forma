@@ -131,18 +131,14 @@ body {
   --breakpoint-laptop: 1024px;
 }
 
-.nav-link {
-  @apply relative font-semibold cursor-pointer py-1 max-tablet:text-sm;
+.nav-link-styles {
+  @apply relative w-fit font-bold cursor-pointer;
+  font-family: var(--font-body);
 }
-.nav-link::after {
+.nav-link-styles::after {
   content: "";
-  display: block;
-  height: 3px;
-  width: 0;
-  border-radius: 2px;
-  background-color: var(--accent);
-  transition: width 0.8s ease;
+  @apply block h-[3px] w-full origin-left scale-x-0 rounded bg-[var(--accent)] transition-transform duration-500 ease-in-out;
 }
-.nav-link:hover::after {
-  width: 100%;
+.nav-link-styles:hover::after {
+  @apply scale-x-100;
 }
