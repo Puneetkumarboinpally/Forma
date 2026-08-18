@@ -3,6 +3,7 @@ import HeroExploreSection from "../components/HeroExploreSection";
 import HeroSection from "../components/HeroSection";
 import HighlightSection from "../components/HighlightSection";
 import PhilosophySection from "../components/PhilosophySection";
+import SubscribeSection from "../components/SubscribeSection";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <CuratedSection />
       <PhilosophySection />
       <HighlightSection />
+      <SubscribeSection/>
     </div>
   );
 };

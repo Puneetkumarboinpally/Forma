@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 const HighlightSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="h-full bg-clay/10 flex justify-center items-center p-4">
+    <section className="h-screen bg-clay/10 flex justify-center items-center p-4">
       <div className="flex flex-col gap-8 text-center p-4">
         <p className="font-body text-lg font-medium">COLLECTION HIGHLIGHT</p>
-        <h2 className="font-display text-5xl font-bold">
+        <h2 className="font-display text-3xl lg:text-5xl font-bold w-full max-w-4xl leading-tight">
           The Natural Collection — Oak, linen, stone and soft forms.
         </h2>
         <button
