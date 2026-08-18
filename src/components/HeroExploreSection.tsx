@@ -9,7 +9,10 @@ const HeroExploreSection = () => {
         <h2 className="text-4xl font-bold font-display">
           Explore the Collection
         </h2>
-        <p className="text-lg w-fit font-medium font-body border-b">
+        <p
+          onClick={() => navigate("/collection")}
+          className="text-lg w-fit font-medium font-body border-b cursor-pointer transition-all duration-300 hover:text-accent hover:text-black"
+        >
           View all categories <span className="font-bold text-3xl">&rarr;</span>
         </p>
       </div>
