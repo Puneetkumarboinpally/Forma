@@ -170,3 +170,28 @@ body {
 .explore-section .arrow:hover {
   opacity: 1;
 }
+
+.curated {
+  @apply relative;
+}
+
+.curated-image {
+  @apply relative overflow-hidden rounded-md;
+}
+
+.curated-image img {
+  @apply transition-transform duration-500 ease-out;
+}
+
+.curated:hover .curated-image img {
+  @apply scale-110;
+}
+
+.curated-image span {
+  @apply absolute text-xl bottom-6 right-6 opacity-0
+    transition-all duration-300;
+}
+
+.curated:hover .curated-image span {
+  @apply opacity-100;
+}
