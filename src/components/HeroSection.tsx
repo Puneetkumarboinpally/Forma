@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero-section">
       <div
@@ -25,8 +28,9 @@ const HeroSection = () => {
           </p>
         </div>
         <button
+          onClick={() => navigate("/collections")}
           className="rounded-md bg-accent px-7 py-3 text-sm 
-        font-semibold text-accent-foreground
+         font-semibold text-accent-foreground cursor-pointer
          transition-all duration-300 hover:bg-accent-hover hover:-translate-y-2"
         >
           SHOP COLLECTION
