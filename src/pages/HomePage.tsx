@@ -1,3 +1,4 @@
+import CuratedSection from "../components/CuratedSection";
 import HeroExploreSection from "../components/HeroExploreSection";
 import HeroSection from "../components/HeroSection";
 
@@ -6,6 +7,7 @@ const HomePage = () => {
     <div className="h-full">
       <HeroSection />
       <HeroExploreSection />
+      <CuratedSection />
     </div>
   );
 };
