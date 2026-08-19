@@ -18,7 +18,7 @@ const BedroomPage = () => {
       setLoading(true);
       setError("");
       const response = await fetch(
-        `https://api.unsplash.com/search/photos?query=bedroom&page=2&Per_page=12&client_id=${accessKey}`,
+        `https://api.unsplash.com/search/photos?query=bedroom&page=2&per_page=12&client_id=${accessKey}`,
       );
       if (!response.ok) {
         throw new Error("something went wrong...");
@@ -53,15 +53,43 @@ const BedroomPage = () => {
         </p>
       </section>
       <section className="h-full p-4">
-        <div className="h-full grid grid-cols-3 gap-4">
+        <div className="flex justify-between items-center pt-12 px-14">
+          <h2>Explore</h2>
+          <p className="font-body text-xl border-b font-medium cursor-pointer active:scale-95 transition-all duration-300 hover:text-accent">
+            View More Collection &rarr;
+          </p>
+        </div>
+        <div className="h-full grid max-tablet:grid-cols-2 laptop:grid-cols-4 gap-6 p-12">
+          {loading && <p>loading</p>}
           {photos.map((photo) => (
-            <div key={photo.id} className="h-70 w-full">
-              <img
-                src={photo.urls.regular}
-                alt={photo.alt_description}
-                className="h-full w-full object-cover"
-              />
-              <p>Bed room Collection</p>
+            <div
+              key={photo.id}
+              className="flex flex-col gap-4 bg-surface p-4 border border-border rounded-lg"
+            >
+              <div className="relative h-70 w-full overflow-hidden group">
+                <img
+                  src={photo.urls.regular}
+                  alt={photo.alt_description}
+                  loading="lazy"
+                  className="h-full w-full object-cover rounded-md cursor-pointer transition-transform duration-500 group-hover:scale-110"
+                />
+                <span
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-20 
+                  py-2 px-3 text-primary font-bold font-body 
+                  bg-surface-subtle rounded cursor-pointer 
+                  transition-transform duration-300 
+                  group-hover:translate-y-0 hover:bg-accent"
+                >
+                  View More Details
+                </span>
+              </div>
+
+              <div>
+                <p className="font-body font-medium text-muted">
+                  {" "}
+                  Bed Room Collection
+                </p>
+              </div>
             </div>
           ))}
         </div>
