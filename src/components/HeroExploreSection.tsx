@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const HeroExploreSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="h-full flex flex-col justify-around gap-4 p-12">
+    <section className="h-full flex flex-col justify-around gap-8 p-12">
       <div className="lg:flex justify-between item-center">
         <h2 className="text-4xl font-bold font-display">
           Explore the Collection
