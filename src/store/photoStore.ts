@@ -21,7 +21,7 @@ export const usePhotoStore = create<PhotoStore>((set) => ({
       const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
       const response = await fetch(
-        `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=12&client_id=${accessKey}`,
+        `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=20&client_id=${accessKey}`,
       );
       if (!response.ok) {
         throw new Error("Something went wrong...");
