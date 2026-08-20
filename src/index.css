@@ -204,16 +204,16 @@ body {
     url("https://plus.unsplash.com/premium_photo-1683140882981-490928b33596?auto=format&fit=crop&w=1920&h=1080&q=85");
 }
 .dining-hero {
-  @apply h-screen w-full bg-cover bg-top bg-no-repeat;
+  @apply h-screen w-full bg-cover bg-center bg-no-repeat;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("https://images.unsplash.com/photo-1594568773147-a072c75e71c6?auto=format&fit=crop&w=1920&h=1080&q=85");
+    url("https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=1920&h=1080&q=85");
 }
 .bedroom-hero {
   @apply h-screen w-full bg-cover bg-top bg-no-repeat;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1920&h=1080&q=85");
+    url("https://plus.unsplash.com/premium_photo-1684175656253-8c08ec031be9?q=80&w=870?auto=format&fit=crop&w=1920&h=1080&q=85");
 }
 .living-hero {
   @apply h-screen w-full bg-cover bg-center bg-no-repeat;
