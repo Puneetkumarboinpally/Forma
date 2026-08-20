@@ -1,46 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { usePhotoStore } from "../store/photoStore";
+import PhotosCard from "../components/PhotosCard";
 
-const LivingRoomPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [photos, setPhotos] = useState<Photo>([]);
+const LIvingRoomPage = () => {
+  const { loading, error, photos, getPhotos } = usePhotoStore();
 
-  type Photo = {
-    id: string;
-    urls: {
-      regular: string;
-    };
-    alt_description: string | null;
-  };
-
-  const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
-
-  const getPhotos = async () => {
-    try {
-      setLoading(true);
-      setError("");
-      const response = await fetch(
-        `https://api.unsplash.com/search/photos?query=living%20room&page=1&per_page=12&client_id=${accessKey}`,
-      );
-      if (!response.ok) {
-        throw new Error("something went wrong");
-      }
-      const data = await response.json();
-      setPhotos(data.results);
-      console.log(data.results);
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("Something went wrong");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
   useEffect(() => {
-    getPhotos();
-  }, []);
+    getPhotos("sofa chair");
+  }, [getPhotos]);
 
   return (
     <div className="h-full">
@@ -54,18 +21,35 @@ const LivingRoomPage = () => {
           timeless style to the heart of your home.
         </p>
       </section>
-      <section className="h-full grid grid-cols-3 gap-4 p-16">
-        {photos.map((photo) => (
-          <img
-            className="h-90 w-90 object-cover"
-            key={photo.id}
-            src={photo.urls.regular}
-            alt={photo.alt_description ?? "Unsplash photo"}
-          />
-        ))}
+      <section className="h-full p-4">
+        <div className=" lg:flex justify-between items-center p-4 laptop:pt-12 laptop:px-14">
+          <div className="phone:mb-4 max-tablet:mb-2">
+            <h2 className="font-display text-3xl my-2 font-bold">
+              Gather in Comfort
+            </h2>
+            <p className="font-body text-md font-medium">
+              Pieces designed for conversation, connection, and everyday living.
+            </p>
+          </div>
+          <div>
+            <p className="font-body w-fit text-lg border-b font-medium cursor-pointer active:scale-95 transition-all duration-300 hover:text-accent">
+              View Full Collection &rarr;
+            </p>
+          </div>
+        </div>
+        {/* COLLECTION PHOTOS CARD */}
+        <div className="h-full phone:grid max-tablet:grid-cols-2 laptop:grid-cols-4 gap-6 p-4 laptop:p-12">
+          {loading && <p>loading</p>}
+          {error && (
+            <p className="col-span-full text-center text-red-500">{error}</p>
+          )}
+          {photos.map((photo) => (
+            <PhotosCard key={photo.id} photo={photo} category="Living Room" />
+          ))}
+        </div>
       </section>
     </div>
   );
 };
 
-export default LivingRoomPage;
+export default LIvingRoomPage;
