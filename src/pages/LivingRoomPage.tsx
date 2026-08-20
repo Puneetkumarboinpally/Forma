@@ -11,15 +11,22 @@ const LIvingRoomPage = () => {
 
   return (
     <div className="h-full">
-      <section className="h-[70dvh] flex flex-col justify-center items-center text-center gap-4 lg:gap-6 p-4 lg:p-8 bg-clay/40">
-        <h2 className="text-4xl lg:text-5xl font-display font-bold">
-          🛋️Living Room
-        </h2>
-        <p className="text-lg font-body font-medium w-full max-w-2xl">
-          Create a space made for slowing down. Discover thoughtfully designed
-          sofas, lounge chairs, and tables that bring comfort, character, and
-          timeless style to the heart of your home.
-        </p>
+      <section
+        className="living-hero
+      flex justify-center items-center p-4 lg:p-8
+       
+     "
+      >
+        <div className="text-center flex flex-col gap-6 p-4">
+          <h2 className="text-7xl laptop:text-9xl font-display font-bold">
+            Living Room
+          </h2>
+          <p className="max-phone:text-lg laptop:text-xl font-body font-semibold w-full max-w-2xl">
+            Create a space made for slowing down. Discover thoughtfully designed
+            sofas, lounge chairs, and tables that bring comfort, character, and
+            timeless style to the heart of your home.
+          </p>
+        </div>
       </section>
       <section className="h-full p-4">
         <div className=" lg:flex justify-between items-center p-4 laptop:pt-12 laptop:px-14">

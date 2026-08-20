@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Monoton:wght@400&display=swap");
 @import "tailwindcss";
 
 body {
@@ -107,6 +107,7 @@ body {
 
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Manrope", sans-serif;
+  --font-hero: "Monoton", sans-serif;
 
   /* =================================
      RADIUS
@@ -194,4 +195,29 @@ body {
 
 .curated:hover .curated-image span {
   @apply opacity-100;
+}
+/* https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&h=1080&q=85 */
+.lighting-hero {
+  @apply h-screen w-full bg-cover bg-center bg-no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://plus.unsplash.com/premium_photo-1683140882981-490928b33596?auto=format&fit=crop&w=1920&h=1080&q=85");
+}
+.dining-hero {
+  @apply h-screen w-full bg-cover bg-top bg-no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1594568773147-a072c75e71c6?auto=format&fit=crop&w=1920&h=1080&q=85");
+}
+.bedroom-hero {
+  @apply h-screen w-full bg-cover bg-top bg-no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=1920&h=1080&q=85");
+}
+.living-hero {
+  @apply h-screen w-full bg-cover bg-center bg-no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://plus.unsplash.com/premium_photo-1683141170332-d7529337265c?auto=format&fit=crop&w=1920&h=1080&q=85");
 }
