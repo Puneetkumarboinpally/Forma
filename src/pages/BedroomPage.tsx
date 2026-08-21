@@ -6,7 +6,7 @@ const BedroomPage = () => {
   const { loading, error, photos, getPhotos } = usePhotoStore();
 
   useEffect(() => {
-    getPhotos("bed");
+    getPhotos("bed bedroom furniture");
   }, [getPhotos]);
 
   return (

@@ -6,7 +6,7 @@ const LightingPage = () => {
   const { loading, error, photos, getPhotos } = usePhotoStore();
 
   useEffect(() => {
-    getPhotos("lamps");
+    getPhotos("lamp");
   }, [getPhotos]);
   return (
     <div className="h-full">
