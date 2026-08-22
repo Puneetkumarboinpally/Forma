@@ -221,3 +221,22 @@ body {
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("https://plus.unsplash.com/premium_photo-1683141170332-d7529337265c?auto=format&fit=crop&w=1920&h=1080&q=85");
 }
+/* --- FILTER SECTION*/
+.filter-container {
+  @apply flex flex-col gap-2;
+}
+.filter-container h2 {
+  @apply tracking-wide text-primary font-semibold font-body;
+}
+.grouped-input {
+  @apply flex items-center gap-2;
+}
+.filter-input {
+  @apply h-4 w-4 appearance-none rounded-sm border border-border checked:bg-muted;
+}
+.filter-label {
+  @apply font-medium font-body;
+}
+.filter-btn {
+  @apply py-2 px-4 bg-surface text-primary rounded font-semibold cursor-pointer active:scale-95;
+}
