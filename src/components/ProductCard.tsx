@@ -1,14 +1,30 @@
 import { Heart } from "lucide-react";
 import type { FurnitureProduct } from "../data/products";
+import { useEffect, useState } from "react";
 
 type ProductCardProps = {
   product: FurnitureProduct;
 };
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const [added, setAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    setAdded(true);
+  };
+  useEffect(() => {
+    if (!added) return;
+
+    const timer = setTimeout(() => {
+      setAdded(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [added]);
+
   return (
     <div
-      className="overflow-hidden
+      className="overflow-hidden flex h-full flex-col
     rounded-lg
     border
     border-border
@@ -49,29 +65,39 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <button
           className="absolute left-1/2 -translate-x-1/2 bottom-10 translate-y-40
         py-2 px-3 rounded-md cursor-pointer active:scale-95
-        bg-surface font-bold font-body opacity-0
-        transition-all duration-500
-        hover:bg-accent 
+        bg-surface font-bold font-body opacity-0 whitespace-nowrap
+        transition-all duration-500 hover:bg-accent 
         group-hover:translate-y-0 group-hover:opacity-100
         "
         >
           View Full Details
         </button>
       </div>
-      <div className="flex flex-col gap-4 p-2">
-        <div className="flex flex-col gap-2 px-2">
+      <div className="flex flex-col gap-4 p-2 flex-1">
+        <div className="flex px-2">
           <h3 className="font-display text-2xl font-bold ">{product.title}</h3>
+        </div>
+        <div className="flex flex-col gap-2 px-2 mt-auto">
           <p className="font-body text-md font-medium w-fit rounded-lg p-1 bg-surface-muted">
             {product.material}
           </p>
+          <p className="font-body text-md font-semibold p-2 text-accent">
+            {product.category} collection
+          </p>
         </div>
-        <div className="flex justify-between items-center px-2">
+        <div className="flex justify-between items-center px-2 mt-auto">
           <p className="font-body text-xl font-semibold">£{product.price}</p>
           <p className="font-body font-medium">★★★★★ {product.rating}</p>
         </div>
       </div>
       <div className="p-2">
+        <p
+          className={`font-semibold text-center mb-3 transition-opacity duration-500 ${added ? "opacity-100" : "opacity-0"}`}
+        >
+          Item added to Cart ✅
+        </p>
         <button
+          onClick={handleAddToCart}
           className="py-2 px-4 w-full bg-yellow-500
          rounded-lg font-bold font-body active:scale-95
          cursor-pointer transition-all duration-300

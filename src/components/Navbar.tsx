@@ -1,4 +1,4 @@
-import { Menu, Moon, Search, ShoppingBag, Sun, X } from "lucide-react";
+import { Heart, Menu, Moon, Search, ShoppingCart, Sun, X } from "lucide-react";
 import { useThemeStore } from "../store/themeStore";
 import { useEffect, useState } from "react";
 import { links } from "../data/NavLinks";
@@ -49,10 +49,16 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* --- WISHLIST SECTION ---*/}
+        <div>
+          <button aria-label="cart button">
+            <Heart />
+          </button>
+        </div>
         {/* --- CART SECTION ---*/}
         <div>
           <button aria-label="cart button">
-            <ShoppingBag />
+            <ShoppingCart />
           </button>
         </div>
 
