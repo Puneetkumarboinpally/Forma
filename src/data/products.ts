@@ -1,4 +1,4 @@
-type FurnitureProduct = {
+export type FurnitureProduct = {
   id: string;
   title: string;
   price: number;

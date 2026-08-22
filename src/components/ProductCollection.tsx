@@ -1,8 +1,9 @@
-import React from "react";
-
+import { products } from "../data/products";
+import ProductCard from "./ProductCard";
 const ProductCollection = () => {
   return (
-    <section className="h-screen w-4/5">
+    <section className="h-full lg:w-4/5">
+      {/* --- TOP SECTION --- */}
       <div className="flex justify-between items-center">
         <div>
           <p>Showing 48 products</p>
@@ -15,6 +16,13 @@ const ProductCollection = () => {
             <option value="price-high">Price: High to Low</option>
           </select>
         </div>
+      </div>
+
+      {/* --- PRODUCTS COLLECTION --- */}
+      <div className="phone:grid max-tablet:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
     </section>
   );
