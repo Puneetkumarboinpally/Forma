@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import LivingRoomPage from "./pages/LIvingRoomPage";
+import LivingRoomPage from "./pages/LivingRoomPage";
 import LightingPage from "./pages/LightingPage";
 import DiningPage from "./pages/DiningPage";
 import BedroomPage from "./pages/BedroomPage";
+import CollectionPage from "./pages/CollectionPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/collection" element={<CollectionPage />} />
         <Route path="/living-room" element={<LivingRoomPage />} />
         <Route path="/bedroom" element={<BedroomPage />} />
         <Route path="/dining" element={<DiningPage />} />

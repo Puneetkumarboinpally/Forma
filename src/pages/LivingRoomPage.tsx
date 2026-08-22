@@ -6,7 +6,8 @@ const LIvingRoomPage = () => {
   const { loading, error, photos, getPhotos } = usePhotoStore();
 
   useEffect(() => {
-    getPhotos("sofa chair");
+    getPhotos("sofa chair living room");
+    
   }, [getPhotos]);
 
   return (
