@@ -28,7 +28,7 @@ const HeroSection = () => {
           </p>
         </div>
         <button
-          onClick={() => navigate("/collections")}
+          onClick={() => navigate("/collection")}
           className="rounded-md bg-accent px-7 py-3 text-sm 
          font-semibold text-accent-foreground cursor-pointer
          transition-all duration-300 hover:bg-accent-hover hover:-translate-y-2"

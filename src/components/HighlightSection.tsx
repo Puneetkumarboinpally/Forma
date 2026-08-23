@@ -10,7 +10,7 @@ const HighlightSection = () => {
           The Natural Collection — Oak, linen, stone and soft forms.
         </h2>
         <button
-          onClick={() => navigate("/collections")}
+          onClick={() => navigate("/collection")}
           className="py-3 px-8 rounded-md font-bold border mx-auto cursor-pointer transition-all duration-300 hover:bg-accent hover:text-primary"
         >
           EXPLORE COLLECTION
