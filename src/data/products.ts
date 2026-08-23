@@ -3,7 +3,7 @@ export type FurnitureProduct = {
   title: string;
   price: number;
   description: string;
-  category: "Living Room" | "Bedroom" | "Dining Room" | "Lighting";
+  category: "All" | "Living Room" | "Bedroom" | "Dining Room" | "Lighting";
   material: string;
   rating: number;
   stock: number;

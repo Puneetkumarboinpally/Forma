@@ -1,4 +1,10 @@
+import { useState } from "react";
+
+const [category, setcategory] = useState("All")
+
 const FilterSection = () => {
+
+  
   return (
     <aside className="flex flex-col gap-4 lg:w-1/5">
       {/* --- CATEGORY SECTION --- */}

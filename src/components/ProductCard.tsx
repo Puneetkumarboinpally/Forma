@@ -42,7 +42,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           src={product.img}
           alt={product.title}
           className="h-full w-full object-cover
-           transition-all duration-500 
+           transition-scale duration-500 
            group-hover:scale-110"
         />
         <button
@@ -77,28 +77,45 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className="flex px-2">
           <h3 className="font-display text-2xl font-bold ">{product.title}</h3>
         </div>
-        <div className="flex flex-col gap-2 px-2 mt-auto">
-          <p className="font-body text-md font-medium w-fit rounded-lg p-1 bg-surface-muted">
-            {product.material}
-          </p>
-          <p className="font-body text-md font-semibold p-2 text-accent">
-            {product.category} collection
-          </p>
-        </div>
         <div className="flex justify-between items-center px-2 mt-auto">
           <p className="font-body text-xl font-semibold">£{product.price}</p>
           <p className="font-body font-medium">★★★★★ {product.rating}</p>
         </div>
+        <div className="flex flex-col gap-2 px-2 mt-auto">
+          <p className="font-body text-md font-medium w-fit rounded-lg p-1 bg-surface-muted">
+            {product.material}
+          </p>
+        </div>
       </div>
-      <div className="p-2">
+      <div className="relative p-2">
         <p
-          className={`font-semibold text-center mb-3 transition-opacity duration-500 ${added ? "opacity-100" : "opacity-0"}`}
+          className={` absolute
+      bottom-full
+      left-1/2
+      mb-2
+      -translate-x-1/2
+      whitespace-nowrap
+      rounded-lg
+      bg-surface-muted
+      px-3
+      py-2
+      text-sm
+      font-semibold
+
+      transition-all
+      duration-500
+
+            ${
+              added
+                ? "translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-2 opacity-0"
+            }`}
         >
           Item added to Cart ✅
         </p>
         <button
           onClick={handleAddToCart}
-          className="py-2 px-4 w-full bg-yellow-500
+          className="py-2 px-4 w-full bg-accent
          rounded-lg font-bold font-body active:scale-95
          cursor-pointer transition-all duration-300
          hover:-translate-y-1"
