@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-const [category, setcategory] = useState("All")
-
 const FilterSection = () => {
-
-  
   return (
     <aside className="flex flex-col gap-4 lg:w-1/5">
       {/* --- CATEGORY SECTION --- */}
@@ -31,7 +27,7 @@ const FilterSection = () => {
             value="seating"
           />
           <label className="filter-label" htmlFor="seating">
-            Seating
+            Sofa & Chairs
           </label>
         </div>
         <div className="grouped-input">
@@ -51,11 +47,23 @@ const FilterSection = () => {
             className="filter-input"
             type="radio"
             name="category"
-            id="storage"
-            value="storage"
+            id="bed"
+            value="bed"
           />
-          <label className="filter-label" htmlFor="storage">
-            Storage
+          <label className="filter-label" htmlFor="bed">
+            Beds
+          </label>
+        </div>
+        <div className="grouped-input">
+          <input
+            className="filter-input"
+            type="radio"
+            name="category"
+            id="lamp"
+            value="lamp"
+          />
+          <label className="filter-label" htmlFor="lamp">
+            Lamps
           </label>
         </div>
       </div>

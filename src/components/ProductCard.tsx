@@ -1,6 +1,7 @@
 import { Heart } from "lucide-react";
 import type { FurnitureProduct } from "../data/products";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type ProductCardProps = {
   product: FurnitureProduct;
@@ -62,7 +63,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
         >
           <Heart className="h-5 w-5" />
         </button>
-        <button
+        <Link
+          to={`/product-details-page/${product.id}`}
           className="absolute left-1/2 -translate-x-1/2 bottom-10 translate-y-40
         py-2 px-3 rounded-md cursor-pointer active:scale-95
         bg-surface font-bold font-body opacity-0 whitespace-nowrap
@@ -71,7 +73,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         "
         >
           View Full Details
-        </button>
+        </Link>
       </div>
       <div className="flex flex-col gap-4 p-2 flex-1">
         <div className="flex px-2">

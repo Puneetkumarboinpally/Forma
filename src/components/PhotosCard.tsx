@@ -1,3 +1,4 @@
+import { Link} from "react-router-dom";
 import type { Photo } from "../types/unsplash";
 
 type PhotosCardProp = {
@@ -18,7 +19,8 @@ const PhotosCard = ({ photo, category }: PhotosCardProp) => {
                   transition-transform duration-500 
                   group-hover:scale-110"
         />
-        <span
+        <Link
+          to={`/product-details-page/${photo.id}`}
           className="absolute top-35 left-12 -translate-x-70 
                   py-2 px-3 text-primary font-bold font-body 
                   bg-surface-subtle rounded 
@@ -27,7 +29,7 @@ const PhotosCard = ({ photo, category }: PhotosCardProp) => {
                   group-hover:translate-x-0 hover:bg-accent"
         >
           View More Details
-        </span>
+        </Link>
       </div>
 
       <div>
