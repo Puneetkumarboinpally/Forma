@@ -33,7 +33,7 @@ const BreadCrumb = () => {
   ];
 
   return (
-    <nav className="flex items-center gap-1 p-4 text-sm">
+    <nav className="flex items-center  gap-1 p-4 text-wrap phone:text-xs max-tablet:text-sm">
       {breadcrumbs.map((breadcrumb, index) => {
         const isLast = index === breadcrumbs.length - 1;
 

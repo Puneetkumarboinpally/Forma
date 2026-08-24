@@ -20,11 +20,11 @@ const ProductDetailsPage = () => {
 
       <div
         className="laptop:flex justify-between 
-      gap-4 overflow-hidden p-4"
+      gap-8 overflow-hidden p-4"
       >
         {/* ---- IMAGE CONTAINER ---- */}
         <div
-          className="h-120 laptop:h-150 laptop:w-1/2 
+          className="max-phone:h-70 tablet:h-100 laptop:h-150 laptop:w-1/2 
         rounded overflow-hidden"
         >
           <img
@@ -45,7 +45,7 @@ const ProductDetailsPage = () => {
             <p className="font-body font-semibold text-3xl italic">
               £{product.price}
             </p>
-            <p className="font-body font-semibold text-xl">{product.rating}</p>
+            <p className="font-body font-semibold text-xl">★★★★★ ({product.rating})</p>
           </div>
           {/* ---- DESCRIPTION SECTION --- */}
           <div>
@@ -53,7 +53,7 @@ const ProductDetailsPage = () => {
               {product.description}
             </p>
           </div>
-          <div className="flex justify-between">
+          <div className="tablet:flex justify-between phone:gap-4">
             <p className="font-body font-medium text-lg">
               Available Stock : {product.stock}
             </p>
@@ -65,9 +65,9 @@ const ProductDetailsPage = () => {
             </p>
           </div>
           {/*---- BUTTON SECTION ---- */}
-          <div className="flex justify-between items-center gap-2 mt-8">
+          <div className="laptop:flex justify-between items-center gap-4 mt-8">
             {/* ---- QUANTITY SECTION ---- */}
-            <div className="flex items-center bg-surface-muted rounded gap-2 py-1 px-4">
+            <div className="flex items-center w-fit bg-surface-muted rounded gap-2 py-1 px-4">
               <button
                 className="text-2xl py-1 px-2
               font-bold font-body rounded
@@ -89,7 +89,7 @@ const ProductDetailsPage = () => {
               </button>
             </div>
             {/* ---- ADD TO CART SECTION ---- */}
-            <div className="flex flex-1">
+            <div className="flex gap-2 mt-4 flex-1">
               <button
                 className="w-full bg-accent rounded 
               text-lg font-bold font-primary font-body
@@ -99,10 +99,7 @@ const ProductDetailsPage = () => {
               >
                 Add to cart
               </button>
-            </div>
-            {/* ---- WISHLIST SECTION ---- */}
-            <div>
-              <button
+               <button
                 className="p-2 bg-surface-muted
                rounded active:scale-95 cursor-pointer"
               >
