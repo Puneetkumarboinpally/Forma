@@ -8,41 +8,59 @@ const BreadCrumb = () => {
   const product = products.find((product) => product.id === id);
 
   if (!product) {
-    return <p>Product not found</p>;
+    return <p className="p-4">Product not found</p>;
   }
+
+  const breadcrumbs = [
+    {
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "Collections",
+      path: "/collection",
+    },
+    {
+      label: product.category,
+      path: `/collection/${product.category
+        .toLowerCase()
+        .replace(/\s+/g, "-")}`,
+    },
+    {
+      label: product.title,
+      path: "",
+    },
+  ];
 
   return (
     <nav className="flex items-center gap-1 p-4 text-sm">
-      <Link
-        to="/"
-        className="font-body font-medium text-muted hover:text-primary"
-      >
-        Home
-      </Link>
+      {breadcrumbs.map((breadcrumb, index) => {
+        const isLast = index === breadcrumbs.length - 1;
 
-      <ChevronRight size={18} className="text-muted" />
+        return (
+          <div key={breadcrumb.label} className="flex items-center gap-1">
+            {isLast ? (
+              <span className="font-body font-semibold text-primary">
+                {breadcrumb.label}
+              </span>
+            ) : (
+              <Link
+                to={breadcrumb.path}
+                className="font-body font-medium text-muted hover:text-primary transition-colors"
+              >
+                {breadcrumb.label}
+              </Link>
+            )}
 
-      <Link
-        to="/collection"
-        className="font-body font-medium text-muted hover:text-primary"
-      >
-        Collections
-      </Link>
-
-      <ChevronRight size={18} className="text-muted" />
-
-      <Link
-        to={`/collection/${product.category.toLowerCase().replace(/\s+/g, "-")}`}
-        className="font-body font-medium text-muted hover:text-primary"
-      >
-        {product.category}
-      </Link>
-
-      <ChevronRight size={18} className="text-muted" />
-
-      <span className="font-body font-semibold text-primary">
-        {product.title}
-      </span>
+            {!isLast && (
+              <ChevronRight
+                size={18}
+                className="text-muted"
+              />
+            )}
+          </div>
+        );
+      })}
     </nav>
   );
 };
