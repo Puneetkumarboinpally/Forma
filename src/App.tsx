@@ -7,6 +7,9 @@ import LightingPage from "./pages/LightingPage";
 import DiningPage from "./pages/DiningPage";
 import BedroomPage from "./pages/BedroomPage";
 import CollectionPage from "./pages/CollectionPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+import WishlistPage from "./pages/WishlistPage";
+import CartPage from "./pages/CartPage";
 
 const App = () => {
   return (
@@ -19,6 +22,13 @@ const App = () => {
         <Route path="/bedroom" element={<BedroomPage />} />
         <Route path="/dining" element={<DiningPage />} />
         <Route path="/lighting" element={<LightingPage />} />
+        <Route path="/wishlist" element={<WishlistPage />} />
+        <Route path="/cart" element={<CartPage />} />
+
+        <Route
+          path="/product-details-page/:id"
+          element={<ProductDetailsPage />}
+        />
       </Routes>
       <Footer />
     </div>
