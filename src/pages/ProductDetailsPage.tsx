@@ -2,15 +2,26 @@ import { useParams } from "react-router-dom";
 import { products } from "../data/products";
 import BreadCrumb from "../components/BreadCrumb";
 import { Heart } from "lucide-react";
+import { useWishlistStore } from "../store/wishlistStore";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
+  const { addToWishlist, removeWishlist, isInWishlist } = useWishlistStore();
 
   const product = products.find((product) => product.id === id);
 
   if (!product) {
     return <h1>Product Not Found</h1>;
   }
+  const saved = isInWishlist(product.id);
+
+  const handleWishlist = () => {
+    if (saved) {
+      removeWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
+  };
 
   return (
     <section className="min-h-screen p-4">
@@ -45,7 +56,9 @@ const ProductDetailsPage = () => {
             <p className="font-body font-semibold text-3xl italic">
               £{product.price}
             </p>
-            <p className="font-body font-semibold text-xl">★★★★★ ({product.rating})</p>
+            <p className="font-body font-semibold text-xl">
+              ★★★★★ ({product.rating})
+            </p>
           </div>
           {/* ---- DESCRIPTION SECTION --- */}
           <div>
@@ -65,31 +78,33 @@ const ProductDetailsPage = () => {
             </p>
           </div>
           {/*---- BUTTON SECTION ---- */}
-          <div className="laptop:flex justify-between items-center gap-4 mt-8">
+          <div className="phone:flex justify-between items-center gap-4 mt-8">
             {/* ---- QUANTITY SECTION ---- */}
-            <div className="flex items-center w-fit bg-surface-muted rounded gap-2 py-1 px-4">
-              <button
-                className="text-2xl py-1 px-2
+            <div>
+              <div className="flex items-center w-fit bg-surface-muted rounded gap-2 py-1 px-4">
+                <button
+                  className="text-2xl py-1 px-2
               font-bold font-body rounded
               cursor-pointer active:scale-95
               transition-color duration-300
               hover:bg-surface"
-              >
-                -
-              </button>
-              <div className="text-xl font-semibold font-body">1</div>
-              <button
-                className="text-2xl py-1 px-2
+                >
+                  -
+                </button>
+                <div className="text-xl font-semibold font-body">1</div>
+                <button
+                  className="text-2xl py-1 px-2
               font-bold font-body rounded
               cursor-pointer active:scale-95
               transition-color duration-300
               hover:bg-surface"
-              >
-                +
-              </button>
+                >
+                  +
+                </button>
+              </div>
             </div>
             {/* ---- ADD TO CART SECTION ---- */}
-            <div className="flex gap-2 mt-4 flex-1">
+            <div className="flex gap-2 flex-1">
               <button
                 className="w-full bg-accent rounded 
               text-lg font-bold font-primary font-body
@@ -99,11 +114,14 @@ const ProductDetailsPage = () => {
               >
                 Add to cart
               </button>
-               <button
+              <button
+                onClick={handleWishlist}
                 className="p-2 bg-surface-muted
                rounded active:scale-95 cursor-pointer"
               >
-                <Heart />
+                <Heart
+                  className={`${saved ? "fill-red-500 text-red-500" : ""}`}
+                />
               </button>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Heart } from "lucide-react";
 import type { FurnitureProduct } from "../data/products";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useWishlistStore } from "../store/wishlistStore";
 
 type ProductCardProps = {
   product: FurnitureProduct;
@@ -9,6 +10,17 @@ type ProductCardProps = {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const [added, setAdded] = useState(false);
+  const { addToWishlist, removeWishlist, isInWishlist } = useWishlistStore();
+
+  const saved = isInWishlist(product.id);
+
+  const handleWishlist = () => {
+    if (saved) {
+      removeWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
+  };
 
   const handleAddToCart = () => {
     setAdded(true);
@@ -47,6 +59,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
            group-hover:scale-110"
         />
         <button
+          onClick={handleWishlist}
           className="
     absolute
     right-3
@@ -61,7 +74,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
     active:scale-95
   "
         >
-          <Heart className="h-5 w-5" />
+          <Heart
+            className={`h-5 w-5 ${saved ? "fill-red-500 text-red-500" : ""}`}
+          />
         </button>
         <Link
           to={`/product-details-page/${product.id}`}

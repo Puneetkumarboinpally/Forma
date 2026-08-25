@@ -13,7 +13,7 @@ export const links: Links[] = [
   {
     id: 2,
     path: "/collection",
-    name: "COLLECTION",
+    name: "COLLECTIONS",
   },
   {
     id: 3,

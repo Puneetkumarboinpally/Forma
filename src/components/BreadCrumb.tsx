@@ -33,7 +33,7 @@ const BreadCrumb = () => {
   ];
 
   return (
-    <nav className="flex items-center  gap-1 p-4 text-wrap phone:text-xs max-tablet:text-sm">
+    <nav className="flex items-center  gap-1 p-4 phone:text-xs tablet:text-sm">
       {breadcrumbs.map((breadcrumb, index) => {
         const isLast = index === breadcrumbs.length - 1;
 
@@ -52,12 +52,7 @@ const BreadCrumb = () => {
               </Link>
             )}
 
-            {!isLast && (
-              <ChevronRight
-                size={18}
-                className="text-muted"
-              />
-            )}
+            {!isLast && <ChevronRight size={18} className="text-muted" />}
           </div>
         );
       })}
