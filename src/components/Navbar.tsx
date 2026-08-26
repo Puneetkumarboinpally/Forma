@@ -53,11 +53,13 @@ const Navbar = () => {
         </div>
 
         {/* --- WISHLIST SECTION ---*/}
-        <div className="relative py-4">
+        <div className="relative py-4 px-1">
           <Link to={"/wishlist"} aria-label="cart button">
             <Heart />
           </Link>
-          <span className="absolute top-0 right-0 font-bold font-bold text-muted">{wishlistCart.length}</span>
+          <span className="absolute top-0 right-0 font-bold font-bold text-red-500">
+            {wishlistCart.length === 0 ? "" : wishlistCart.length}
+          </span>
         </div>
         {/* --- CART SECTION ---*/}
         <div>

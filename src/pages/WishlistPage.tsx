@@ -33,7 +33,7 @@ const WishlistPage = () => {
               {wishlistCart.length === 1 ? "item" : "items"} saved
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid max-tablet:grid-cols-2 lg:grid-cols-3 gap-4">
             {wishlistCart.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
