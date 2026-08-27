@@ -3,10 +3,13 @@ import { products } from "../data/products";
 import BreadCrumb from "../components/BreadCrumb";
 import { Heart } from "lucide-react";
 import { useWishlistStore } from "../store/wishlistStore";
+import { useCartStore } from "../store/cartStore";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
   const { addToWishlist, removeWishlist, isInWishlist } = useWishlistStore();
+  const { addToCart, increaseQuantity, decreaseQuantity, cart } =
+    useCartStore();
 
   const product = products.find((product) => product.id === id);
 
@@ -14,6 +17,10 @@ const ProductDetailsPage = () => {
     return <h1>Product Not Found</h1>;
   }
   const saved = isInWishlist(product.id);
+
+  const cartItem = cart.find((item) => item.product.id === product.id);
+
+  const quantity = cartItem?.quantity ?? 0;
 
   const handleWishlist = () => {
     if (saved) {
@@ -83,6 +90,7 @@ const ProductDetailsPage = () => {
             <div>
               <div className="flex items-center w-fit bg-surface-muted rounded gap-2 py-1 px-4">
                 <button
+                  onClick={() => decreaseQuantity(product.id)}
                   className="text-2xl py-1 px-2
               font-bold font-body rounded
               cursor-pointer active:scale-95
@@ -91,8 +99,11 @@ const ProductDetailsPage = () => {
                 >
                   -
                 </button>
-                <div className="text-xl font-semibold font-body">1</div>
+                <div className="text-xl font-semibold font-body">
+                  {quantity}
+                </div>
                 <button
+                  onClick={() => increaseQuantity(product.id)}
                   className="text-2xl py-1 px-2
               font-bold font-body rounded
               cursor-pointer active:scale-95
@@ -106,6 +117,7 @@ const ProductDetailsPage = () => {
             {/* ---- ADD TO CART SECTION ---- */}
             <div className="flex gap-2 flex-1">
               <button
+                onClick={() => addToCart(product)}
                 className="w-full bg-accent rounded 
               text-lg font-bold font-primary font-body
               py-2 cursor-pointer active:scale-95 
