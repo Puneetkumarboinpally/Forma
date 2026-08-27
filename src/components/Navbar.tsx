@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { links } from "../data/NavLinks";
 import { Link, NavLink } from "react-router-dom";
 import { useWishlistStore } from "../store/wishlistStore";
+import { useCartStore } from "../store/cartStore";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const { wishlistCart } = useWishlistStore();
+  const { cart } = useCartStore();
 
   const theme = useThemeStore((state) => state.theme);
   const toggle = useThemeStore((state) => state.toggleTheme);
@@ -62,8 +64,11 @@ const Navbar = () => {
           </span>
         </div>
         {/* --- CART SECTION ---*/}
-        <div>
+        <div className="relative py-4 px-1">
           <Link to={"/cart"} aria-label="cart button">
+            <span className="absolute top-0 right-0 font-bold font-bold text-red-500">
+              {cart.length === 0 ? "" : cart.length}
+            </span>
             <ShoppingCart />
           </Link>
         </div>
