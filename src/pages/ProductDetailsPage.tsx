@@ -4,14 +4,30 @@ import BreadCrumb from "../components/BreadCrumb";
 import { Heart } from "lucide-react";
 import { useWishlistStore } from "../store/wishlistStore";
 import { useCartStore } from "../store/cartStore";
+import { useState, useEffect } from "react";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
   const { addToWishlist, removeWishlist, isInWishlist } = useWishlistStore();
   const { addToCart, increaseQuantity, decreaseQuantity, cart } =
     useCartStore();
+  const [added, setAdded] = useState(false);
 
   const product = products.find((product) => product.id === id);
+
+  const handleAddToCart = () => {
+    setAdded(true);
+  };
+
+  useEffect(() => {
+    if (!added) return;
+
+    const timer = setTimeout(() => {
+      setAdded(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [added]);
 
   if (!product) {
     return <h1>Product Not Found</h1>;
@@ -85,7 +101,7 @@ const ProductDetailsPage = () => {
             </p>
           </div>
           {/*---- BUTTON SECTION ---- */}
-          <div className="phone:flex justify-between items-center gap-4 mt-8">
+          <div className="phone:flex justify-between items-center gap-4 mt-4">
             {/* ---- QUANTITY SECTION ---- */}
             <div>
               <div className="flex items-center w-fit bg-surface-muted rounded gap-2 py-1 px-4">
@@ -115,9 +131,28 @@ const ProductDetailsPage = () => {
               </div>
             </div>
             {/* ---- ADD TO CART SECTION ---- */}
-            <div className="flex gap-2 flex-1">
+            <div className="relative flex gap-2 flex-1">
+              <span
+                className={`absolute -top-13 left-1/3 
+              rounded bg-surface-muted 
+              font-bold font-body h-10 w-36 
+              flex justify-center items-center
+              opacity-0 transition-all
+      duration-500
+
+            ${
+              added
+                ? "translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-2 opacity-0"
+            }`}
+              >
+                Items added ✅
+              </span>
               <button
-                onClick={() => addToCart(product)}
+                onClick={() => {
+                  addToCart(product);
+                  handleAddToCart();
+                }}
                 className="w-full bg-accent rounded 
               text-lg font-bold font-primary font-body
               py-2 cursor-pointer active:scale-95 

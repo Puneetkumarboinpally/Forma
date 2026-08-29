@@ -56,17 +56,28 @@ const Navbar = () => {
 
         {/* --- WISHLIST SECTION ---*/}
         <div className="relative py-4 px-1">
-          <Link to={"/wishlist"} aria-label="cart button">
+          <Link to="/wishlist" aria-label="wishlist">
             <Heart />
+
+            {wishlistCart.length > 0 && (
+              <span
+                className="absolute top-1 -right-1 
+                flex h-4 w-4 items-center justify-center 
+                rounded-full bg-red-500 text-[10px] 
+                font-bold text-primary"
+              >
+                {wishlistCart.length}
+              </span>
+            )}
           </Link>
-          <span className="absolute top-0 right-0 font-bold font-bold text-red-500">
-            {wishlistCart.length === 0 ? "" : wishlistCart.length}
-          </span>
         </div>
         {/* --- CART SECTION ---*/}
         <div className="relative py-4 px-1">
           <Link to={"/cart"} aria-label="cart button">
-            <span className="absolute top-0 right-0 font-bold font-bold text-red-500">
+            <span className="absolute top-1 -right-1 
+                flex h-4 w-4 items-center justify-center 
+                rounded-full bg-red-500 text-[10px] 
+                font-bold text-primary">
               {cart.length === 0 ? "" : cart.length}
             </span>
             <ShoppingCart />
