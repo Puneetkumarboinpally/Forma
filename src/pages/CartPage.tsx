@@ -7,7 +7,7 @@ const CartPage = () => {
   const { cart } = useCartStore();
   const navigate = useNavigate();
   return (
-    <section className="min-h-screen p-6">
+    <section className="min-h-screen p-6 laptop:p-8">
       {cart.length === 0 ? (
         <>
           <div className="h-screen flex flex-col justify-center gap-4 items-center">
@@ -44,13 +44,13 @@ const CartPage = () => {
         </>
       ) : (
         <>
-          <div className="mb-8">
-            <h2 className="text-5xl font-display font-bold">Your Cart</h2>
+          <div className="mb-4">
+            <h2 className="text-5xl font-display font-bold">Shopping Cart</h2>
             <p className="text-lg font-body font-medium text-muted">
               {cart.length} items
             </p>
           </div>
-          <div className="laptop:flex justify-between items-center">
+          <div className="laptop:flex justify-between gap-4">
             <CartProducts />
             <TotalSection />
           </div>

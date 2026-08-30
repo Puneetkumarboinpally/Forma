@@ -5,19 +5,19 @@ const CartProducts = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
     useCartStore();
   return (
-    <div className="h-full w-full lg:w-2/3">
-      <div className="laptop:grid phone:grid max-tablet:grid-cols-2 gap-4">
+    <div className="h-full w-full laptop:w-[50rem] bg-surface p-8">
+      <div className="flex flex-col gap-4">
         {cart.map((item) => (
           <div
             key={item.product.id}
-            className="laptop:flex gap-4 p-4 
+            className="phone:flex gap-4 p-4 
             border border-border 
             rounded-lg shadow-md 
             transition-all duration-300 
             hover:-translate-y-1"
           >
             {/* --- IMAGE SECTION --- */}
-            <div className="h-40 w-full lg:w-60 overflow-hidden">
+            <div className="h-40 phone:w-full tablet:w-60 laptop:w-60 overflow-hidden">
               <img
                 src={item.product.img}
                 alt={item.product.title}
@@ -26,16 +26,16 @@ const CartProducts = () => {
             </div>
             {/* --- PRODUCTS DETAILS SECTION --- */}
             <div className="w-full flex flex-col justify-between gap-4">
-              <div className="laptop:flex justify-between">
+              <div className="phone:flex justify-between">
                 <div>
-                  <h2 className="text-3xl font-display font-bold">
+                  <h2 className="text-2xl laptop:text-3xl font-display font-black">
                     {item.product.title}
                   </h2>
-                  <p className="text-lg font-body font-medium text-muted">
+                  <p className="laptop:text-lg font-body font-medium text-muted">
                     {item.product.category} / {item.product.material}
                   </p>
                 </div>
-                <p className="text-2xl font-body font-semibold lg:item-start mt-2">
+                <p className="text-xl laptop:text-2xl font-body font-semibold mt-1">
                   £{item.product.price * item.quantity}
                 </p>
               </div>

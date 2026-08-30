@@ -126,8 +126,7 @@ body {
       MEDIA QUERIES
      ================================= */
 
-  --breakpoint-small-phone: 375px;
-  --breakpoint-phone: 425px;
+  --breakpoint-phone: 450px;
   --breakpoint-tablet: 768px;
   --breakpoint-laptop: 1024px;
 }
