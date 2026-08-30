@@ -1,8 +1,10 @@
 import { BadgeCheck, LockKeyhole, RefreshCw, Truck } from "lucide-react";
 import { useCartStore } from "../store/cartStore";
+import { useNavigate } from "react-router-dom";
 
 const TotalSection = () => {
   const { cart, resetCart } = useCartStore();
+  const navigate = useNavigate();
 
   const subTotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
@@ -44,7 +46,10 @@ const TotalSection = () => {
             Taxes included. Delivery calculated at checkout.
           </p>
           <button
-            onClick={() => resetCart()}
+            onClick={() => {
+              resetCart();
+              navigate("/order-confirmed");
+            }}
             className="flex justify-center 
             items-center w-full py-3 
           bg-accent text-accent-foreground text-lg
