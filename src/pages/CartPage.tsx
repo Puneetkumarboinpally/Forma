@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import CartProducts from "../components/CartProducts";
 import TotalSection from "../components/TotalSection";
 import { useCartStore } from "../store/cartStore";
 
 const CartPage = () => {
   const { cart } = useCartStore();
+  const navigate = useNavigate();
   return (
     <section className="min-h-screen p-6">
       {cart.length === 0 ? (
@@ -16,6 +18,7 @@ const CartPage = () => {
             </p>
             <div className="flex gap-2">
               <button
+                onClick={() => navigate("/wishlist")}
                 className="py-2 px-4 
               border border-border rounded-lg 
               cursor-pointer active:scale-95 
@@ -26,6 +29,7 @@ const CartPage = () => {
                 wishlist
               </button>
               <button
+                onClick={() => navigate("/collection")}
                 className="py-2 px-4 
               border border-border rounded-lg 
               cursor-pointer active:scale-95 
