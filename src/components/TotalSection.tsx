@@ -2,7 +2,7 @@ import { BadgeCheck, LockKeyhole, RefreshCw, Truck } from "lucide-react";
 import { useCartStore } from "../store/cartStore";
 
 const TotalSection = () => {
-  const { cart } = useCartStore();
+  const { cart, resetCart } = useCartStore();
 
   const subTotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
@@ -44,6 +44,7 @@ const TotalSection = () => {
             Taxes included. Delivery calculated at checkout.
           </p>
           <button
+            onClick={() => resetCart()}
             className="flex justify-center 
             items-center w-full py-3 
           bg-accent text-accent-foreground text-lg
