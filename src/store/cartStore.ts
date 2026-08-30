@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import type { FurnitureProduct } from "../data/products";
 import { persist } from "zustand/middleware";
+import { Car } from "lucide-react";
 
 type CartItem = {
   product: FurnitureProduct;
@@ -11,6 +12,7 @@ type CartState = {
   cart: CartItem[];
   addToCart: (product: FurnitureProduct) => void;
   removeFromCart: (id: string) => void;
+  resetCart: () => void;
   increaseQuantity: (id: string) => void;
   decreaseQuantity: (id: string) => void;
 };
@@ -42,6 +44,7 @@ export const useCartStore = create<CartState>()(
         set((state) => ({
           cart: state.cart.filter((item) => item.product.id !== id),
         })),
+      resetCart: () => set({ cart: [] }),
       increaseQuantity: (id) =>
         set((state) => ({
           cart: state.cart.map((item) =>

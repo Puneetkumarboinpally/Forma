@@ -3,6 +3,7 @@ import type { FurnitureProduct } from "../data/products";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useWishlistStore } from "../store/wishlistStore";
+import { useCartStore } from "../store/cartStore";
 
 type ProductCardProps = {
   product: FurnitureProduct;
@@ -11,6 +12,7 @@ type ProductCardProps = {
 const ProductCard = ({ product }: ProductCardProps) => {
   const [added, setAdded] = useState(false);
   const { addToWishlist, removeWishlist, isInWishlist } = useWishlistStore();
+  const { addToCart } = useCartStore();
 
   const saved = isInWishlist(product.id);
 
@@ -131,7 +133,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
           Item added to Cart ✅
         </p>
         <button
-          onClick={handleAddToCart}
+          onClick={() => {
+            handleAddToCart();
+            addToCart(product);
+          }}
           className="py-2 px-4 w-full bg-accent
          rounded-lg font-bold font-body active:scale-95
          cursor-pointer transition-all duration-300

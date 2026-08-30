@@ -74,12 +74,16 @@ const Navbar = () => {
         {/* --- CART SECTION ---*/}
         <div className="relative py-4 px-1">
           <Link to={"/cart"} aria-label="cart button">
-            <span className="absolute top-1 -right-1 
+            {cart.length > 0 && (
+              <span
+                className="absolute top-1 -right-1 
                 flex h-4 w-4 items-center justify-center 
                 rounded-full bg-red-500 text-[10px] 
-                font-bold text-primary">
-              {cart.length === 0 ? "" : cart.length}
-            </span>
+                font-bold text-primary"
+              >
+                {cart.length === 0 ? "" : cart.length}
+              </span>
+            )}
             <ShoppingCart />
           </Link>
         </div>
