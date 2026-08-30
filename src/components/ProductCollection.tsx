@@ -30,7 +30,7 @@ const ProductCollection = () => {
             id="sort"
             value={sorting}
             onChange={(e) => setSorting(e.target.value)}
-            className="border border-border rounded p-1 "
+            className="border border-border rounded p-1"
           >
             <option value="default">Featured</option>
             <option value="price-low">Price: Low to High</option>

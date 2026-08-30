@@ -45,8 +45,8 @@ const CartPage = () => {
       ) : (
         <>
           <div className="mb-8">
-            <h2 className="text-7xl font-display font-bold">Your Cart</h2>
-            <p className="text-2xl font-body font-medium text-muted">
+            <h2 className="text-5xl font-display font-bold">Your Cart</h2>
+            <p className="text-lg font-body font-medium text-muted">
               {cart.length} items
             </p>
           </div>
