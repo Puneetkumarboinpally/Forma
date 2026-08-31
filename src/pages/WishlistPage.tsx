@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/CollectionPage/ProductCard";
 import { useWishlistStore } from "../store/wishlistStore";
 
 const WishlistPage = () => {

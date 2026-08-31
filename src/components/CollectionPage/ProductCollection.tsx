@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { products } from "../data/products";
+import { products } from "../../data/products";
 import ProductCard from "./ProductCard";
 const ProductCollection = () => {
   const [sorting, setSorting] = useState("default");
