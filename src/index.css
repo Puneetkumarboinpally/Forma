@@ -250,3 +250,22 @@ body {
 .order-grouped p {
   @apply text-lg font-body font-medium text-secondary;
 }
+
+/* --- MARQUEE SECTION ---*/
+.track p {
+  @apply text-lg font-medium font-body;
+}
+
+.track {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

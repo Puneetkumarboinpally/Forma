@@ -20,7 +20,7 @@ const OrderConfirmedPage = () => {
         </span>
         <h1 className="text-2xl font-bold font-body ">ORDER CONFIRMED</h1>
         <p className="text-lg font-medium font-body ">
-          Thank you for your order
+          Thank you for ordering with us
         </p>
         <p className="text-lg font-medium font-body ">
           Your order had been successfully placed.
