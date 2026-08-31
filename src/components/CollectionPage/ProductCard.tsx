@@ -1,9 +1,9 @@
 import { Heart } from "lucide-react";
-import type { FurnitureProduct } from "../data/products";
+import type { FurnitureProduct } from "../../data/products";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useWishlistStore } from "../store/wishlistStore";
-import { useCartStore } from "../store/cartStore";
+import { useWishlistStore } from "../../store/wishlistStore";
+import { useCartStore } from "../../store/cartStore";
 
 type ProductCardProps = {
   product: FurnitureProduct;

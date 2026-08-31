@@ -1,5 +1,5 @@
-import FilterSection from "../components/FilterSection";
-import ProductCollection from "../components/ProductCollection";
+import FilterSection from "../components/CollectionPage/FilterSection";
+import ProductCollection from "../components/CollectionPage/ProductCollection";
 
 const CollectionPage = () => {
   return (

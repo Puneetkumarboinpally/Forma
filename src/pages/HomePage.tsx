@@ -1,9 +1,9 @@
-import CuratedSection from "../components/CuratedSection";
-import HeroExploreSection from "../components/HeroExploreSection";
-import HeroSection from "../components/HeroSection";
-import HighlightSection from "../components/HighlightSection";
-import PhilosophySection from "../components/PhilosophySection";
-import SubscribeSection from "../components/SubscribeSection";
+import CuratedSection from "../components/homepage/CuratedSection";
+import HeroExploreSection from "../components/homepage/HeroExploreSection";
+import HeroSection from "../components/homepage/HeroSection";
+import HighlightSection from "../components/homepage/HighlightSection";
+import PhilosophySection from "../components/homepage/PhilosophySection";
+import SubscribeSection from "../components/homepage/SubscribeSection";
 
 const HomePage = () => {
   return (

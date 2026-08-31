@@ -1,5 +1,5 @@
 import { BadgeCheck, LockKeyhole, RefreshCw, Truck } from "lucide-react";
-import { useCartStore } from "../store/cartStore";
+import { useCartStore } from "../../store/cartStore";
 import { useNavigate } from "react-router-dom";
 
 const TotalSection = () => {

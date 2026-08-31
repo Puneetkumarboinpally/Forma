@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import CartProducts from "../components/CartProducts";
-import TotalSection from "../components/TotalSection";
+import CartProducts from "../components/CartsPage/CartProducts";
+import TotalSection from "../components/CartsPage/TotalSection";
 import { useCartStore } from "../store/cartStore";
 
 const CartPage = () => {
