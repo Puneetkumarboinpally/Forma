@@ -7,7 +7,6 @@ const LIvingRoomPage = () => {
 
   useEffect(() => {
     getPhotos("sofa chair living room");
-    
   }, [getPhotos]);
 
   return (

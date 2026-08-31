@@ -4,20 +4,27 @@ import { CategoryFilter } from "./FilterSectionPage/CategoryFilter";
 import { RoomFilter } from "./FilterSectionPage/RoomFilter";
 import { MaterialFilter } from "./FilterSectionPage/MaterialsFilter";
 import { RatingFilter } from "./FilterSectionPage/RatingFilter";
-import { PriceFilter } from "./FilterSectionPage/PriceFilter";
+import { useFilterStore } from "../../store/filterStore";
 
 export const FilterSection = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { clearFilters } = useFilterStore();
+
   return (
     <section className="relative lg:w-1/5">
       {/* DESKTOP */}
       <div className="max-tablet:hidden">
-        <div className="sticky top-0 left-0 flex flex-col gap-4">
+        <div className="sticky top-0 left-0 flex flex-col pb-4 gap-4">
           <CategoryFilter />
           <RoomFilter />
           <RatingFilter />
           <MaterialFilter />
-          <PriceFilter />
+          <button
+            onClick={clearFilters}
+            className="px-3 py-2 font-bold rounded cursor-pointer font-body bg-primary text-accent-foreground active:scale-95 transition-all duration-300 hover:-translate-y-1 hover:bg-accent"
+          >
+            Reset Filter
+          </button>
         </div>
       </div>
 
@@ -45,12 +52,17 @@ export const FilterSection = () => {
           }
         `}
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 pb-4 gap-4">
             <CategoryFilter />
             <RoomFilter />
             <RatingFilter />
             <MaterialFilter />
-            <PriceFilter />
+            <button
+              onClick={clearFilters}
+              className="px-3 py-2 font-bold font-body cursor-pointer  rounded bg-primary text-accent-foreground active:scale-95 transition-all duration-300 hover:-translate-y-1 hover:bg-accent"
+            >
+              Reset Filter
+            </button>
           </div>
         </div>
       </div>

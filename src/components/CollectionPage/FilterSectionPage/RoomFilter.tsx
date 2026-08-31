@@ -1,3 +1,5 @@
+import { useFilterStore } from "../../../store/filterStore";
+
 const rooms = [
   { id: "living-room", label: "Living Room", value: "living-room" },
   { id: "dining-room", label: "Dining Room", value: "dining-room" },
@@ -5,6 +7,7 @@ const rooms = [
   { id: "lighting", label: "Lighting", value: "lighting" },
 ];
 export const RoomFilter = () => {
+  const { room: selectedRoom, setRoom } = useFilterStore();
   return (
     <div className="filter-container">
       <h2>ROOM</h2>
@@ -17,6 +20,8 @@ export const RoomFilter = () => {
             name="room"
             id={room.id}
             value={room.value}
+            checked={selectedRoom === room.value}
+            onChange={(e) => setRoom(e.target.value)}
           />
 
           <label className="filter-label" htmlFor={room.id}>
