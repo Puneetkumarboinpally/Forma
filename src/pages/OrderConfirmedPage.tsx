@@ -7,14 +7,14 @@ const OrderConfirmedPage = () => {
   const navigate = useNavigate();
   useEffect(() => {
     confetti({
-      particleCount: 150,
-      spread: 70,
+      particleCount: 500,
+      spread: 180,
       origin: { y: 0.6 },
     });
   }, []);
   return (
     <section className="min-h-screen flex justify-center items-center p-4">
-      <div className="flex flex-col gap-4 items-center">
+      <div className="flex flex-col gap-2 items-center">
         <span>
           <BadgeCheck size={80} className="text-green-500" />
         </span>
@@ -30,7 +30,7 @@ const OrderConfirmedPage = () => {
         </p>
         <button
           onClick={() => navigate("/collection")}
-          className="py-2 px-4 bg-accent
+          className="py-2 px-4 bg-accent mt-6
          rounded text-lg font-bold font-body 
          active:scale-95 cursor-pointer
         transition-all duration-300
