@@ -1,4 +1,5 @@
 import { ArrowDownZA, ArrowUpAZ } from "lucide-react";
+import { useFilterStore } from "../../../store/filterStore";
 const ratings = [
   {
     id: "higher",
@@ -14,6 +15,7 @@ const ratings = [
   },
 ];
 export const RatingFilter = () => {
+  const { sortRating, setSortRating } = useFilterStore();
   return (
     <div className="filter-container">
       <h2>SORT BY RATINGS</h2>
@@ -24,6 +26,10 @@ export const RatingFilter = () => {
             name="rating"
             id={rating.id}
             value={rating.value}
+            checked={sortRating === rating.value}
+            onChange={(e) =>
+              setSortRating(e.target.value as "higher" | "lower")
+            }
             className="filter-input"
           />
           <div className="flex items-center gap-2">

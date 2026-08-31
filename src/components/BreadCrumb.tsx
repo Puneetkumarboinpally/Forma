@@ -21,10 +21,8 @@ const BreadCrumb = () => {
       path: "/collection",
     },
     {
-      label: product.category,
-      path: `/collection/${product.category
-        .toLowerCase()
-        .replace(/\s+/g, "-")}`,
+      label: product.room,
+      path: `/${product.room.toLowerCase().replace(/\s+/g, "-")}`,
     },
     {
       label: product.title,

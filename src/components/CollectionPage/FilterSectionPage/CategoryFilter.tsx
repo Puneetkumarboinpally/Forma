@@ -1,6 +1,7 @@
 const categories = [
   { id: "all", label: "All Furniture", value: "all" },
-  { id: "seating", label: "Sofa & Chairs", value: "seating" },
+  { id: "sofa", label: "Sofa", value: "sofa" },
+  { id: "chairs", label: "Chairs", value: "chairs" },
   { id: "tables", label: "Tables", value: "tables" },
   { id: "bed", label: "Beds", value: "bed" },
   { id: "lamp", label: "Lamps", value: "lamp" },

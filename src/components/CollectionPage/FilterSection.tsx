@@ -6,7 +6,7 @@ import { MaterialFilter } from "./FilterSectionPage/MaterialsFilter";
 import { RatingFilter } from "./FilterSectionPage/RatingFilter";
 import { PriceFilter } from "./FilterSectionPage/PriceFilter";
 
-const FilterSection = () => {
+export const FilterSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="relative lg:w-1/5">
