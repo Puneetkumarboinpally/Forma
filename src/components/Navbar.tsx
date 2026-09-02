@@ -18,7 +18,9 @@ const Navbar = () => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
   return (
-    <div className="flex justify-between items-center h-16 max-w-container p-4 bg-surface border-b border-b-border">
+    <div className="flex justify-between items-center 
+    h-16 w-full p-4 fixed top-0 left-0 z-50
+    bg-surface border-b border-b-border">
       {/* --- NAVBAR LOGO SECTION ---*/}
       <div className="flex items-center">
         <Link
@@ -30,7 +32,7 @@ const Navbar = () => {
       </div>
 
       {/* --- NAV MENU SECTION ---*/}
-      <nav className="flex gap-4 max-laptop:gap-2">
+      <nav className="flex gap-4 max-laptop:gap-2 ">
         {links.map((link) => (
           <NavLink
             key={link.id}

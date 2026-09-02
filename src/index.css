@@ -257,7 +257,7 @@ body {
 }
 
 .track {
-  animation: marquee 15s linear infinite;
+  animation: marquee 23s linear infinite;
 }
 
 @keyframes marquee {
