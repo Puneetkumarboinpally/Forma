@@ -3,7 +3,7 @@ import ProductCollection from "../components/CollectionPage/ProductCollection";
 
 const CollectionPage = () => {
   return (
-    <div className="h-full p-8">
+    <div className="min-h-full p-8 mt-14">
       <div>
         <h1 className="text-7xl font-display font-bold">All Furniture</h1>
         <p className="text-xl font-body font-medium">

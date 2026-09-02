@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { Photo } from "../types/unsplash";
 
 type PhotosCardProp = {
@@ -8,7 +8,10 @@ type PhotosCardProp = {
 
 const PhotosCard = ({ photo, category }: PhotosCardProp) => {
   return (
-    <div className="flex flex-col gap-4 bg-surface p-4 border border-border rounded-lg group">
+    <Link
+      to={`/product-details-page/${photo.id}`}
+      className="flex flex-col gap-4 bg-surface p-4 border border-border rounded-lg group"
+    >
       <div className="relative h-70 w-full overflow-hidden">
         <img
           src={photo.urls.regular}
@@ -37,7 +40,7 @@ const PhotosCard = ({ photo, category }: PhotosCardProp) => {
           {category} Collection
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
