@@ -1,9 +1,10 @@
 export type FurnitureProduct = {
   id: string;
   title: string;
+  category: string;
   price: number;
   description: string;
-  category: "All" | "Living Room" | "Bedroom" | "Dining Room" | "Lighting";
+  room: "All" | "living-room" | "bedroom" | "dining-room" | "lighting";
   material: string;
   rating: number;
   stock: number;
@@ -13,30 +14,32 @@ export type FurnitureProduct = {
 
 export const products: FurnitureProduct[] = [
   // =====================================================
-  // LIVING ROOM
+  // living-room
   // =====================================================
 
   {
     id: "H8ATMkhYnIo",
     title: "Modern Linen Sofa",
+    category: "sofa",
     price: 899,
     description:
       "A comfortable linen sofa with a clean modern silhouette and soft cushions.",
-    category: "Living Room",
+    room: "living-room",
     material: "Linen",
     rating: 4.7,
     stock: 8,
-    searchTerm: "modern linen sofa living room",
+    searchTerm: "modern linen sofa living-room",
     img: "https://images.unsplash.com/photo-1649511134921-67afc567280c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MXx8c29mYSUyMGNoYWlyJTIwbGl2aW5nJTIwcm9vbXxlbnwwfHx8fDE3ODcyNjkwNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "CgjBaRKroEY",
     title: "Scandinavian Lounge Sofa",
+    category: "sofa",
     price: 749,
     description:
       "A Scandinavian-inspired sofa featuring deep seating and natural wooden legs.",
-    category: "Living Room",
+    room: "living-room",
     material: "Fabric",
     rating: 4.6,
     stock: 12,
@@ -47,10 +50,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "PO6n1RM_pbY",
     title: "Classic Velvet Sofa",
+    category: "sofa",
     price: 1099,
     description:
       "A luxurious velvet sofa with plush cushions and an elegant timeless design.",
-    category: "Living Room",
+    room: "living-room",
     material: "Velvet",
     rating: 4.9,
     stock: 5,
@@ -61,10 +65,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "_veirRXwPOQ",
     title: "Contemporary Sectional Sofa",
+    category: "sofa",
     price: 1299,
     description:
       "A spacious sectional sofa designed for comfortable family gatherings and relaxing evenings.",
-    category: "Living Room",
+    room: "living-room",
     material: "Polyester",
     rating: 4.8,
     stock: 4,
@@ -75,10 +80,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "wBIIJKfjG1g",
     title: "Minimal Accent Chair",
+    category: "chair",
     price: 349,
     description:
       "A stylish accent chair with a compact design that adds comfort to modern interiors.",
-    category: "Living Room",
+    room: "living-room",
     material: "Cotton",
     rating: 4.5,
     stock: 15,
@@ -89,10 +95,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "i4WbkwwvRj4",
     title: "Boucle Lounge Chair",
+    category: "chair",
     price: 429,
     description:
       "A soft boucle lounge chair designed to create a cozy reading or relaxation corner.",
-    category: "Living Room",
+    room: "living-room",
     material: "Boucle",
     rating: 4.8,
     stock: 7,
@@ -103,10 +110,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "MfuqFoaDtlU",
     title: "Leather Recliner Chair",
+    category: "chair",
     price: 699,
     description:
       "A comfortable leather recliner offering excellent support for relaxing after a long day.",
-    category: "Living Room",
+    room: "living-room",
     material: "Leather",
     rating: 4.7,
     stock: 6,
@@ -117,10 +125,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "0Xf6dWg-6yI",
     title: "Curved Cloud Sofa",
+    category: "sofa",
     price: 1199,
     description:
       "A generously cushioned curved sofa with a soft contemporary appearance.",
-    category: "Living Room",
+    room: "living-room",
     material: "Polyester",
     rating: 4.9,
     stock: 3,
@@ -131,10 +140,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "bP3XVjC5T_A",
     title: "Mid-Century Sofa",
+    category: "sofa",
     price: 849,
     description:
       "A mid-century inspired sofa with tapered wooden legs and refined upholstery.",
-    category: "Living Room",
+    room: "living-room",
     material: "Fabric",
     rating: 4.6,
     stock: 9,
@@ -145,10 +155,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "iTCqcJ1sPwk",
     title: "Compact Two-Seater Sofa",
+    category: "sofa",
     price: 649,
     description:
       "A compact two-seater sofa perfect for apartments and smaller living spaces.",
-    category: "Living Room",
+    room: "living-room",
     material: "Linen",
     rating: 4.5,
     stock: 11,
@@ -159,10 +170,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "wTnXfIqHW0c",
     title: "Modern Fabric Armchair",
+    category: "chair",
     price: 389,
     description:
       "A comfortable fabric armchair with wide armrests and a contemporary frame.",
-    category: "Living Room",
+    room: "living-room",
     material: "Fabric",
     rating: 4.6,
     stock: 14,
@@ -173,10 +185,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "bdRQqJWoAug",
     title: "Deep Seat Lounge Sofa",
+    category: "sofa",
     price: 999,
     description:
       "A deep-seat sofa designed for maximum comfort with generously padded cushions.",
-    category: "Living Room",
+    room: "living-room",
     material: "Velvet",
     rating: 4.8,
     stock: 5,
@@ -187,10 +200,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "I8uGzNNj1tw",
     title: "Woven Accent Chair",
+    category: "chair",
     price: 319,
     description:
       "A decorative woven chair combining natural textures with a modern frame.",
-    category: "Living Room",
+    room: "living-room",
     material: "Rattan",
     rating: 4.4,
     stock: 10,
@@ -201,10 +215,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "d74sP6dnt_I",
     title: "Three-Seater Fabric Sofa",
+    category: "sofa",
     price: 799,
     description:
       "A versatile three-seater sofa with durable fabric upholstery and comfortable seating.",
-    category: "Living Room",
+    room: "living-room",
     material: "Polyester",
     rating: 4.7,
     stock: 8,
@@ -215,10 +230,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "jhB_BLVGQB0",
     title: "Oak Frame Lounge Chair",
+    category: "chair",
     price: 459,
     description:
       "A lounge chair featuring a solid oak frame and soft upholstered seating.",
-    category: "Living Room",
+    room: "living-room",
     material: "Oak",
     rating: 4.8,
     stock: 6,
@@ -229,10 +245,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "njotOXzZruc",
     title: "Luxury Modular Sofa",
+    category: "sofa",
     price: 1599,
     description:
-      "A modular sofa that can be rearranged to suit different living room layouts.",
-    category: "Living Room",
+      "A modular sofa that can be rearranged to suit different living-room layouts.",
+    room: "living-room",
     material: "Velvet",
     rating: 4.9,
     stock: 3,
@@ -243,10 +260,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "bo7rC9mBUHk",
     title: "Boucle Accent Armchair",
+    category: "chair",
     price: 399,
     description:
       "A contemporary boucle armchair with a rounded shape and plush seating.",
-    category: "Living Room",
+    room: "living-room",
     material: "Boucle",
     rating: 4.7,
     stock: 9,
@@ -257,10 +275,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "NHB35M8X4MY",
     title: "Modern Corner Sofa",
+    category: "sofa",
     price: 1399,
     description:
       "A spacious corner sofa designed to maximize seating while maintaining a modern aesthetic.",
-    category: "Living Room",
+    room: "living-room",
     material: "Fabric",
     rating: 4.8,
     stock: 4,
@@ -271,10 +290,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "oUF0heqVFwc",
     title: "Classic Leather Sofa",
+    category: "sofa",
     price: 1249,
     description:
       "A sophisticated leather sofa combining durable materials with timeless styling.",
-    category: "Living Room",
+    room: "living-room",
     material: "Leather",
     rating: 4.9,
     stock: 5,
@@ -285,10 +305,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "mpAwTGM9tDc",
     title: "Soft Cloud Armchair",
+    category: "chair",
     price: 479,
     description:
       "A generously padded armchair designed to provide a soft and relaxing seating experience.",
-    category: "Living Room",
+    room: "living-room",
     material: "Boucle",
     rating: 4.8,
     stock: 7,
@@ -297,16 +318,17 @@ export const products: FurnitureProduct[] = [
   },
 
   // =====================================================
-  // Bedroom
+  // bedroom
   // =====================================================
 
   {
     id: "3AvEi1EoIyM",
     title: "Oak Platform Bed",
+    category: "bed",
     price: 899,
     description:
       "A sturdy oak platform bed with a minimalist frame and natural wood finish.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Oak",
     rating: 4.7,
     stock: 8,
@@ -317,10 +339,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "8wDnylxemkk",
     title: "Upholstered King Bed",
+    category: "bed",
     price: 1199,
     description:
       "A comfortable king-size bed featuring a soft upholstered headboard.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Fabric",
     rating: 4.8,
     stock: 6,
@@ -331,10 +354,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "u88zDvr5V6g",
     title: "Walnut Storage Bed",
+    category: "bed",
     price: 1349,
     description:
       "A stylish walnut bed with integrated storage compartments for extra organization.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Walnut",
     rating: 4.9,
     stock: 4,
@@ -345,10 +369,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "QJLms7X8oJU",
     title: "Modern Wooden Bed",
+    category: "bed",
     price: 799,
     description:
       "A simple wooden bed frame combining natural materials with minimalist styling.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Wood",
     rating: 4.6,
     stock: 10,
@@ -358,25 +383,27 @@ export const products: FurnitureProduct[] = [
 
   {
     id: "h0j-H2jyFj4",
-    title: "Canopy Bedroom Bed",
+    title: "Canopy bedroom Bed",
+    category: "bed",
     price: 1499,
     description:
-      "An elegant canopy bed with a refined frame that creates a luxurious Bedroom atmosphere.",
-    category: "Bedroom",
+      "An elegant canopy bed with a refined frame that creates a luxurious bedroom atmosphere.",
+    room: "bedroom",
     material: "Wood",
     rating: 4.9,
     stock: 3,
-    searchTerm: "luxury canopy Bedroom bed",
+    searchTerm: "luxury canopy bedroom bed",
     img: "https://images.unsplash.com/photo-1517862774645-dd398fbfaffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8NXx8YmVkJTIwYmVkcm9vb20lMjBmdXJuaXR1cmV8ZW58MHx8fHwxNzg3MjcyMzM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "ghPHKipv790",
     title: "Minimal Platform Bed",
+    category: "bed",
     price: 699,
     description:
-      "A low-profile platform bed designed for modern minimalist Bedrooms.",
-    category: "Bedroom",
+      "A low-profile platform bed designed for modern minimalist bedrooms.",
+    room: "bedroom",
     material: "Oak",
     rating: 4.5,
     stock: 12,
@@ -387,10 +414,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "u-RIsXlI8Q8",
     title: "Natural Oak Double Bed",
+    category: "bed",
     price: 849,
     description:
       "A natural oak double bed with a warm finish and clean contemporary lines.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Oak",
     rating: 4.7,
     stock: 9,
@@ -401,10 +429,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "f9O-1eKGlQM",
     title: "Velvet Upholstered Bed",
+    category: "bed",
     price: 1099,
     description:
       "A luxurious upholstered bed with a soft velvet headboard and elegant detailing.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Velvet",
     rating: 4.9,
     stock: 5,
@@ -415,10 +444,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "ZqqwJA71Ke4",
     title: "Floating Platform Bed",
+    category: "bed",
     price: 999,
     description:
-      "A modern floating-style platform bed that creates a light and spacious Bedroom aesthetic.",
-    category: "Bedroom",
+      "A modern floating-style platform bed that creates a light and spacious bedroom aesthetic.",
+    room: "bedroom",
     material: "Wood",
     rating: 4.8,
     stock: 6,
@@ -429,10 +459,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "KXy7hKJ3EMc",
     title: "King Storage Bed",
+    category: "bed",
     price: 1299,
     description:
-      "A practical king-size bed with generous under-bed storage for Bedroom essentials.",
-    category: "Bedroom",
+      "A practical king-size bed with generous under-bed storage for bedroom essentials.",
+    room: "bedroom",
     material: "Wood",
     rating: 4.7,
     stock: 7,
@@ -443,10 +474,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "H2NpsZJe2IA",
     title: "Scandinavian Bed Frame",
+    category: "bed",
     price: 749,
     description:
       "A Scandinavian-inspired bed featuring natural wood and a simple elegant frame.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Pine",
     rating: 4.6,
     stock: 11,
@@ -457,10 +489,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "-qOa0YYfdGo",
     title: "Tufted Headboard Bed",
+    category: "bed",
     price: 1149,
     description:
       "A sophisticated bed with a padded tufted headboard and durable wooden frame.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Velvet",
     rating: 4.8,
     stock: 5,
@@ -471,10 +504,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "Yo28aVLWkdU",
     title: "Solid Pine Bed",
+    category: "bed",
     price: 649,
     description:
-      "A durable solid pine bed with a natural finish suitable for contemporary Bedrooms.",
-    category: "Bedroom",
+      "A durable solid pine bed with a natural finish suitable for contemporary bedrooms.",
+    room: "bedroom",
     material: "Pine",
     rating: 4.5,
     stock: 14,
@@ -485,10 +519,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "_5AGnG4Mh5E",
     title: "Contemporary Queen Bed",
+    category: "bed",
     price: 899,
     description:
       "A contemporary queen-size bed with clean lines and a sturdy construction.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Oak",
     rating: 4.7,
     stock: 8,
@@ -499,10 +534,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "KFHsoQGT6uk",
     title: "Rattan Headboard Bed",
+    category: "bed",
     price: 949,
     description:
       "A stylish bed featuring a natural rattan headboard and warm wooden frame.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Rattan",
     rating: 4.8,
     stock: 6,
@@ -513,10 +549,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "AT1AqItpuOI",
     title: "Luxury King Bed",
+    category: "bed",
     price: 1599,
     description:
       "A premium king-size bed designed with a substantial frame and luxurious upholstered headboard.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Velvet",
     rating: 4.9,
     stock: 3,
@@ -527,10 +564,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "l6m1qfobbdI",
     title: "Compact Single Bed",
+    category: "bed",
     price: 499,
     description:
-      "A practical single bed designed for smaller Bedrooms and guest rooms.",
-    category: "Bedroom",
+      "A practical single bed designed for smaller bedrooms and guest rooms.",
+    room: "bedroom",
     material: "Pine",
     rating: 4.4,
     stock: 15,
@@ -541,10 +579,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "Ps3VqTGfWhU",
     title: "Modern Four Poster Bed",
+    category: "bed",
     price: 1399,
     description:
       "A contemporary four-poster bed combining a strong architectural frame with elegant styling.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Oak",
     rating: 4.8,
     stock: 4,
@@ -555,10 +594,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "tN2PUhQQWgc",
     title: "Oak Slatted Bed",
+    category: "bed",
     price: 799,
     description:
       "A natural oak bed featuring a slatted headboard and minimalist construction.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Oak",
     rating: 4.7,
     stock: 9,
@@ -569,10 +609,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "gooFl1sx3ow",
     title: "Soft Fabric Bed",
+    category: "bed",
     price: 999,
     description:
       "A modern fabric-covered bed with a comfortable padded headboard and clean silhouette.",
-    category: "Bedroom",
+    room: "bedroom",
     material: "Fabric",
     rating: 4.7,
     stock: 7,
@@ -581,300 +622,321 @@ export const products: FurnitureProduct[] = [
   },
 
   // =====================================================
-  // Dining Room
+  // dining-room
   // =====================================================
 
   {
     id: "NFbwes_e-jI'",
-    title: "Solid Oak Dining Room Table",
+    title: "Solid Oak dining-room Table",
+    category: "table",
     price: 999,
     description:
-      "A durable solid oak Dining Room table with a natural finish for everyday family Dining Room.",
-    category: "Dining Room",
+      "A durable solid oak dining-room table with a natural finish for everyday family dining-room.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.8,
     stock: 7,
-    searchTerm: "solid oak Dining Room table",
+    searchTerm: "solid oak dining-room table",
     img: "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MXx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "zGKRmwzplVc",
-    title: "Modern Round Dining Room Table",
+    title: "Modern Round dining-room Table",
+    category: "table",
     price: 699,
     description:
-      "A contemporary round Dining Room table with a smooth tabletop and sculptural base.",
-    category: "Dining Room",
+      "A contemporary round dining-room table with a smooth tabletop and sculptural base.",
+    room: "dining-room",
     material: "Wood",
     rating: 4.6,
     stock: 10,
-    searchTerm: "modern round Dining Room table",
+    searchTerm: "modern round dining-room table",
     img: "https://images.unsplash.com/photo-1657524398377-567034729507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8Mnx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "hi3SkqB9rMI",
-    title: "Extendable Dining Room Table",
+    title: "Extendable dining-room Table",
+    category: "table",
     price: 1199,
     description:
-      "A versatile Dining Room table that extends to provide additional seating for guests.",
-    category: "Dining Room",
+      "A versatile dining-room table that extends to provide additional seating for guests.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.8,
     stock: 5,
-    searchTerm: "extendable Dining Room table",
+    searchTerm: "extendable dining-room table",
     img: "https://images.unsplash.com/photo-1600623050499-84929aad17c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8M3x8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "x3BCSWCAtrY",
-    title: "Walnut Dining Room Table",
+    title: "Walnut dining-room Table",
+    category: "table",
     price: 1299,
     description:
-      "A premium walnut Dining Room table featuring rich wood tones and timeless styling.",
-    category: "Dining Room",
+      "A premium walnut dining-room table featuring rich wood tones and timeless styling.",
+    room: "dining-room",
     material: "Walnut",
     rating: 4.9,
     stock: 4,
-    searchTerm: "walnut Dining Room table",
+    searchTerm: "walnut dining-room table",
     img: "https://images.unsplash.com/photo-1505409628601-edc9af17fda6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "kjh70RMHDco",
-    title: "Minimalist Dining Room Table",
+    title: "Minimalist dining-room Table",
+    category: "table",
     price: 649,
     description:
-      "A clean minimalist Dining Room table designed for modern and Scandinavian interiors.",
-    category: "Dining Room",
+      "A clean minimalist dining-room table designed for modern and Scandinavian interiors.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.5,
     stock: 12,
-    searchTerm: "minimalist Dining Room table",
+    searchTerm: "minimalist dining-room table",
     img: "https://images.unsplash.com/photo-1602872030490-4a484a7b3ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8NXx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "GQQyH0yNqLk",
-    title: "Industrial Dining Room Table",
+    title: "Industrial dining-room Table",
+    category: "table",
     price: 799,
     description:
-      "A sturdy industrial Dining Room table combining a solid wood top with a metal base.",
-    category: "Dining Room",
+      "A sturdy industrial dining-room table combining a solid wood top with a metal base.",
+    room: "dining-room",
     material: "Wood & Metal",
     rating: 4.6,
     stock: 8,
-    searchTerm: "industrial Dining Room table",
+    searchTerm: "industrial dining-room table",
     img: "https://images.unsplash.com/photo-1616486886892-ff366aa67ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8Nnx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "xstTzTRiJ4k",
-    title: "Marble Dining Room Table",
+    title: "Marble dining-room Table",
+    category: "table",
     price: 1499,
     description:
-      "A sophisticated Dining Room table featuring a smooth marble tabletop and modern base.",
-    category: "Dining Room",
+      "A sophisticated dining-room table featuring a smooth marble tabletop and modern base.",
+    room: "dining-room",
     material: "Marble",
     rating: 4.9,
     stock: 3,
-    searchTerm: "marble Dining Room table",
+    searchTerm: "marble dining-room table",
     img: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8N3x8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "AAy5l4-oFuw",
-    title: "Scandinavian Dining Room Table",
+    title: "Scandinavian dining-room Table",
+    category: "table",
     price: 849,
     description:
-      "A Scandinavian Dining Room table with natural wood tones and elegantly tapered legs.",
-    category: "Dining Room",
+      "A Scandinavian dining-room table with natural wood tones and elegantly tapered legs.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.7,
     stock: 9,
-    searchTerm: "scandinavian Dining Room table",
+    searchTerm: "scandinavian dining-room table",
     img: "https://images.unsplash.com/photo-1617806118233-18e1de247200?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8OHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "0dszrg9-V1o",
-    title: "Round Oak Dining Room Table",
+    title: "Round Oak dining-room Table",
+    category: "table",
     price: 749,
     description:
-      "A compact round oak Dining Room table perfect for smaller Dining Room areas.",
-    category: "Dining Room",
+      "A compact round oak dining-room table perfect for smaller dining-room areas.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.6,
     stock: 11,
-    searchTerm: "round oak Dining Room table",
+    searchTerm: "round oak dining-room table",
     img: "https://images.unsplash.com/photo-1583845112239-97ef1341b271?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8OXx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzg3MTk3NDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "fZ1vlupgdSY",
-    title: "Farmhouse Dining Room Table",
+    title: "Farmhouse dining-room Table",
+    category: "table",
     price: 1099,
     description:
       "A traditional farmhouse-inspired table built with solid wood and a warm finish.",
-    category: "Dining Room",
+    room: "dining-room",
     material: "Pine",
     rating: 4.8,
     stock: 6,
-    searchTerm: "farmhouse Dining Room table",
+    searchTerm: "farmhouse dining-room table",
     img: "https://images.unsplash.com/photo-1614597445336-8a67e9314d91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTB8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "Uaf1g970Hrk",
-    title: "Glass Top Dining Room Table",
+    title: "Glass Top dining-room Table",
+    category: "table",
     price: 899,
     description:
-      "A contemporary Dining Room table featuring a transparent glass top and modern frame.",
-    category: "Dining Room",
+      "A contemporary dining-room table featuring a transparent glass top and modern frame.",
+    room: "dining-room",
     material: "Glass",
     rating: 4.5,
     stock: 7,
-    searchTerm: "glass top Dining Room table",
+    searchTerm: "glass top dining-room table",
     img: "https://images.unsplash.com/photo-1636138388621-258a72ecb07e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTF8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "9dRBM8Qw2TE",
-    title: "Dark Walnut Dining Room Table",
+    title: "Dark Walnut dining-room Table",
+    category: "table",
     price: 1149,
     description:
-      "A dark walnut Dining Room table offering rich color and a sophisticated modern appearance.",
-    category: "Dining Room",
+      "A dark walnut dining-room table offering rich color and a sophisticated modern appearance.",
+    room: "dining-room",
     material: "Walnut",
     rating: 4.8,
     stock: 5,
-    searchTerm: "dark walnut Dining Room table",
+    searchTerm: "dark walnut dining-room table",
     img: "https://images.unsplash.com/photo-1577140917170-285929fb55b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTJ8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "16SJwUFgWCw",
-    title: "Compact Dining Room Table",
+    title: "Compact dining-room Table",
+    category: "table",
     price: 549,
     description:
-      "A practical compact Dining Room table designed for apartments and smaller homes.",
-    category: "Dining Room",
+      "A practical compact dining-room table designed for apartments and smaller homes.",
+    room: "dining-room",
     material: "Wood",
     rating: 4.4,
     stock: 13,
-    searchTerm: "compact Dining Room table",
+    searchTerm: "compact dining-room table",
     img: "https://images.unsplash.com/photo-1606660023296-81d67734170a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTN8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "COzqEKjaxqo",
     title: "Modern Pedestal Table",
+    category: "table",
     price: 949,
     description:
-      "A modern pedestal Dining Room table with a spacious tabletop and sculptural central base.",
-    category: "Dining Room",
+      "A modern pedestal dining-room table with a spacious tabletop and sculptural central base.",
+    room: "dining-room",
     material: "Wood",
     rating: 4.7,
     stock: 8,
-    searchTerm: "modern pedestal Dining Room table",
+    searchTerm: "modern pedestal dining-room table",
     img: "https://images.unsplash.com/photo-1636138389529-d35a2a348dc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTR8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "0hAdietsUrE",
-    title: "Reclaimed Wood Dining Room Table",
+    title: "Reclaimed Wood dining-room Table",
+    category: "table",
     price: 1049,
     description:
-      "A characterful Dining Room table crafted from reclaimed wood with a natural rustic finish.",
-    category: "Dining Room",
+      "A characterful dining-room table crafted from reclaimed wood with a natural rustic finish.",
+    room: "dining-room",
     material: "Reclaimed Wood",
     rating: 4.7,
     stock: 5,
-    searchTerm: "reclaimed wood Dining Room table",
+    searchTerm: "reclaimed wood dining-room table",
     img: "https://images.unsplash.com/photo-1562050344-f7ad946cee35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTV8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "cXmER3VNxUA",
     title: "Luxury Extendable Table",
+    category: "table",
     price: 1399,
     description:
-      "A premium extendable Dining Room table designed for both everyday meals and larger gatherings.",
-    category: "Dining Room",
+      "A premium extendable dining-room table designed for both everyday meals and larger gatherings.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.9,
     stock: 4,
-    searchTerm: "luxury extendable Dining Room table",
+    searchTerm: "luxury extendable dining-room table",
     img: "https://images.unsplash.com/photo-1615920606214-6428b3324c74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTZ8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "PCE0T5i4pDI",
-    title: "Natural Pine Dining Room Table",
+    title: "Natural Pine dining-room Table",
+    category: "table",
     price: 599,
     description:
-      "A simple pine Dining Room table with a warm natural finish and sturdy construction.",
-    category: "Dining Room",
+      "A simple pine dining-room table with a warm natural finish and sturdy construction.",
+    room: "dining-room",
     material: "Pine",
     rating: 4.5,
     stock: 12,
-    searchTerm: "natural pine Dining Room table",
+    searchTerm: "natural pine dining-room table",
     img: "https://images.unsplash.com/photo-1574966739987-65e38db0f7ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTd8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "yLfsEMVbOWA",
     title: "Contemporary Black Table",
+    category: "table",
     price: 749,
     description:
-      "A contemporary black Dining Room table featuring a clean geometric frame.",
-    category: "Dining Room",
+      "A contemporary black dining-room table featuring a clean geometric frame.",
+    room: "dining-room",
     material: "Wood",
     rating: 4.6,
     stock: 9,
-    searchTerm: "contemporary black Dining Room table",
+    searchTerm: "contemporary black dining-room table",
     img: "https://images.unsplash.com/photo-1630527152680-500b5453fb04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTh8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "fkugMBhVf1c",
-    title: "Oval Dining Room Table",
+    title: "Oval dining-room Table",
+    category: "table",
     price: 899,
     description:
-      "An elegant oval Dining Room table offering comfortable seating and a softer silhouette.",
-    category: "Dining Room",
+      "An elegant oval dining-room table offering comfortable seating and a softer silhouette.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.7,
     stock: 7,
-    searchTerm: "oval Dining Room table",
+    searchTerm: "oval dining-room table",
     img: "https://images.unsplash.com/photo-1605239435870-67df4c54a0b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MTl8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   {
     id: "acDi0vsnuCc",
-    title: "Luxury Oak Dining Room Table",
+    title: "Luxury Oak dining-room Table",
+    category: "table",
     price: 1249,
     description:
-      "A premium oak Dining Room table combining substantial construction with refined modern design.",
-    category: "Dining Room",
+      "A premium oak dining-room table combining substantial construction with refined modern design.",
+    room: "dining-room",
     material: "Oak",
     rating: 4.9,
     stock: 4,
-    searchTerm: "luxury oak Dining Room table",
+    searchTerm: "luxury oak dining-room table",
     img: "https://images.unsplash.com/photo-1627992491080-793188b1cf1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MjB8fGRpbmluZyUyMHRhYmxlfGVufDB8fHx8MTc4NzE5NzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 
   // =====================================================
-  // Lighting
+  // lighting
   // =====================================================
 
   {
     id: "aPdUKy65qWE",
     title: "Modern Table Lamp",
+    category: "table",
     price: 129,
     description:
-      "A compact modern table lamp providing warm ambient Lighting for living spaces.",
-    category: "Lighting",
+      "A compact modern table lamp providing warm ambient lighting for living spaces.",
+    room: "lighting",
     material: "Metal",
     rating: 4.6,
     stock: 18,
@@ -885,10 +947,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "KP7p0-DRGbg",
     title: "Minimal Floor Lamp",
+    category: "lamp",
     price: 249,
     description:
-      "A tall minimalist floor lamp designed to provide soft ambient Lighting.",
-    category: "Lighting",
+      "A tall minimalist floor lamp designed to provide soft ambient lighting.",
+    room: "lighting",
     material: "Metal",
     rating: 4.7,
     stock: 11,
@@ -899,10 +962,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "Ry9WBo3qmoc",
     title: "Ceramic Bedside Lamp",
+    category: "bed",
     price: 99,
     description:
       "A decorative ceramic bedside lamp with a warm glow and neutral finish.",
-    category: "Lighting",
+    room: "lighting",
     material: "Ceramic",
     rating: 4.5,
     stock: 20,
@@ -913,10 +977,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "_bzFLkJyY6o",
     title: "Industrial Pendant Lamp",
+    category: "lamp",
     price: 189,
     description:
       "An industrial-style pendant lamp featuring a simple metal shade.",
-    category: "Lighting",
+    room: "lighting",
     material: "Metal",
     rating: 4.6,
     stock: 14,
@@ -927,10 +992,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "wsvCC6UyKjs",
     title: "Contemporary Arc Lamp",
+    category: "lamp",
     price: 329,
     description:
       "A contemporary arc floor lamp perfect for reading corners and sofas.",
-    category: "Lighting",
+    room: "lighting",
     material: "Metal",
     rating: 4.8,
     stock: 8,
@@ -941,10 +1007,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "toX2sYnycCw",
     title: "Brass Table Lamp",
+    category: "table",
     price: 159,
     description:
       "An elegant brass table lamp designed to add warmth and sophistication to interiors.",
-    category: "Lighting",
+    room: "lighting",
     material: "Brass",
     rating: 4.7,
     stock: 13,
@@ -955,10 +1022,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "pdIwPL3HU2s",
     title: "Glass Globe Lamp",
+    category: "lamp",
     price: 179,
     description:
-      "A modern glass globe lamp providing soft diffused Lighting for contemporary spaces.",
-    category: "Lighting",
+      "A modern glass globe lamp providing soft diffused lighting for contemporary spaces.",
+    room: "lighting",
     material: "Glass",
     rating: 4.6,
     stock: 16,
@@ -969,10 +1037,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "9UR3Zafm328",
     title: "Wooden Floor Lamp",
+    category: "lamp",
     price: 289,
     description:
       "A warm wooden floor lamp combining natural materials with minimalist styling.",
-    category: "Lighting",
+    room: "lighting",
     material: "Wood",
     rating: 4.7,
     stock: 9,
@@ -983,10 +1052,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "pxoZSTdAzeU",
     title: "Black Dome Lamp",
+    category: "lamp",
     price: 139,
     description:
       "A sleek black dome lamp designed for desks, side tables, and bedside spaces.",
-    category: "Lighting",
+    room: "lighting",
     material: "Metal",
     rating: 4.5,
     stock: 17,
@@ -997,10 +1067,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "_kdTyfnUFAc",
     title: "Rattan Pendant Light",
+    category: "lamp",
     price: 219,
     description:
-      "A natural rattan pendant light that adds texture and warmth to Dining Room areas.",
-    category: "Lighting",
+      "A natural rattan pendant light that adds texture and warmth to dining-room areas.",
+    room: "lighting",
     material: "Rattan",
     rating: 4.8,
     stock: 10,
@@ -1011,10 +1082,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "-yLHx_Qm-lo'",
     title: "Marble Base Lamp",
+    category: "lamp",
     price: 199,
     description:
       "A sophisticated table lamp featuring a solid marble base and elegant shade.",
-    category: "Lighting",
+    room: "lighting",
     material: "Marble",
     rating: 4.8,
     stock: 8,
@@ -1025,10 +1097,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "AgU9-qsNc1Y",
     title: "Modern Tripod Floor Lamp",
+    category: "lamp",
     price: 269,
     description:
       "A stylish tripod floor lamp combining a fabric shade with a modern wooden frame.",
-    category: "Lighting",
+    room: "lighting",
     material: "Wood & Fabric",
     rating: 4.7,
     stock: 9,
@@ -1039,10 +1112,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "xe_f__fOBNs",
     title: "Pendant Cluster Lamp",
+    category: "lamp",
     price: 349,
     description:
       "A decorative cluster pendant lamp designed to create a striking focal point.",
-    category: "Lighting",
+    room: "lighting",
     material: "Glass",
     rating: 4.8,
     stock: 6,
@@ -1053,10 +1127,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "7rvkxLAraU8",
     title: "Minimal Desk Lamp",
+    category: "lamp",
     price: 89,
     description:
-      "A compact adjustable desk lamp designed for focused workspace Lighting.",
-    category: "Lighting",
+      "A compact adjustable desk lamp designed for focused workspace lighting.",
+    room: "lighting",
     material: "Metal",
     rating: 4.4,
     stock: 22,
@@ -1067,10 +1142,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "BCNO7JuNi1w",
     title: "Soft Fabric Floor Lamp",
+    category: "lamp",
     price: 229,
     description:
       "A fabric-shaded floor lamp that creates a soft and relaxing ambient glow.",
-    category: "Lighting",
+    room: "lighting",
     material: "Fabric",
     rating: 4.6,
     stock: 12,
@@ -1081,10 +1157,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "NGb91VwnOWY",
     title: "Ceramic Sculptural Lamp",
+    category: "lamp",
     price: 249,
     description:
-      "A decorative sculptural ceramic lamp designed to work as both Lighting and interior decor.",
-    category: "Lighting",
+      "A decorative sculptural ceramic lamp designed to work as both lighting and interior decor.",
+    room: "lighting",
     material: "Ceramic",
     rating: 4.8,
     stock: 7,
@@ -1095,10 +1172,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "VDPauwJ_sHo",
     title: "Modern Wall Lamp",
+    category: "lamp",
     price: 119,
     description:
-      "A contemporary wall-mounted lamp providing subtle accent Lighting for interiors.",
-    category: "Lighting",
+      "A contemporary wall-mounted lamp providing subtle accent lighting for interiors.",
+    room: "lighting",
     material: "Metal",
     rating: 4.5,
     stock: 15,
@@ -1109,10 +1187,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "3LTht2nxd34",
     title: "Nordic Pendant Lamp",
+    category: "lamp",
     price: 199,
     description:
       "A Nordic-inspired pendant lamp featuring a clean shape and understated design.",
-    category: "Lighting",
+    room: "lighting",
     material: "Metal",
     rating: 4.7,
     stock: 11,
@@ -1123,10 +1202,11 @@ export const products: FurnitureProduct[] = [
   {
     id: "NFbwes_e-jI",
     title: "Vintage Table Lamp",
+    category: "table",
     price: 149,
     description:
       "A vintage-inspired table lamp combining classic styling with warm ambient illumination.",
-    category: "Lighting",
+    room: "lighting",
     material: "Ceramic",
     rating: 4.6,
     stock: 13,
@@ -1137,14 +1217,130 @@ export const products: FurnitureProduct[] = [
   {
     id: "ulh3-dLSXjI",
     title: "Luxury Brass Floor Lamp",
+    category: "lamp",
     price: 399,
     description:
       "A premium brass floor lamp with an elegant structure designed for sophisticated interiors.",
-    category: "Lighting",
+    room: "lighting",
     material: "Brass",
     rating: 4.9,
     stock: 5,
     searchTerm: "luxury brass floor lamp",
     img: "https://images.unsplash.com/photo-1667312939978-64cf31718a6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM0Njc4fDB8MXxzZWFyY2h8MjB8fGxhbXB8ZW58MHx8fHwxNzg3MjcyODc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    id: "H8ATMkhYnI3",
+    title: "Miro Lounge Chair",
+    category: "chair",
+    price: 495,
+    description:
+      "A comfortable linen sofa with a clean modern silhouette and soft cushions.",
+    room: "living-room",
+    material: "Linen",
+    rating: 4.7,
+    stock: 14,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuACnNIVozCEz3raUV7y_yWmN_OBHGVKoRUa_tIqmzjvPjQ6U37f-rxpnf7LKac5Ki7HC1kscvqihqb0XNjEmYoRvdK0VVi7KEmC_x-IwFCCEvYBXZLT_U2K6Cbu6T0YY0bBCLQMOkd63sfEdHifmkiM3yJDZb2JICz4Lk0GXOKMqhY4BTcHqN_17jx9uqwhQQgGEHUgjcIH6PDjiZBxUrNICHsrueZAW3ePICuLqACrmCPNVn-skWmY",
+  },
+  {
+    id: "H8ATMkhYnIu",
+    title: "Linea Oak Coffee Table",
+    category: "table",
+    price: 680,
+    description:
+      "An elegant oval dining-room table offering comfortable seating and a softer silhouette.",
+    room: "living-room",
+    material: "Wood",
+    rating: 4.3,
+    stock: 25,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKTAYETR7b6LSXxgfErEQBb1dM7_sYUhaswSAI0KXkKBBS_aoprUn6v8LIle2wBNwMVtg0Z7yp1AnYIco46WA5B4mx2v96v4vktn1PwgB0sF-yYlmH6sU0kg8LLSWZQ7ve4pTXOnZAfCu0AzbXI1EAmctM_HLP6joSuEIAewz1IbPT85hA6HHQCMb0gQj9qFY5pqVaDSMrrfGqYeZqRywf358ys4H53HH0Q1xVWvziYolCNbk-ndZ4",
+  },
+  {
+    id: "G8ATMkhYnIu",
+    title: "Arco Dining Chair",
+    category: "chair",
+    price: 120,
+    description:
+      "A generously padded armchair designed to provide a soft and relaxing seating experience.",
+    room: "dining-room",
+    material: "wood",
+    rating: 4.8,
+    stock: 25,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjQo64E_FcpV5bdOiHrzvOmJllSGGINjv7pjVNnfZ0XCEYnsHjuURgKj9rrG1DHNavymvC2-8W9KWmopq6imIt0T6q6T-hJ_HzAEVJjeAkklilsqFHTUv9DHMNw3iqoWV2RTNodzun7tmokq_1xrXKLsJzExkW6v9ID8nms72-o2HA6MfrXCoyZm88q6WmUX0spxMRBZHPYort2RqWsIxiinv9EtvMUlVqVqpgovU1UMreX7jSfIuu",
+  },
+  {
+    id: "P8ATMkhYnIu",
+    title: "Noma Floor Lamp",
+    category: "lamp",
+    price: 320,
+    description:
+      "A modern glass globe lamp providing soft diffused lighting for contemporary spaces.",
+    room: "lighting",
+    material: "grass",
+    rating: 4.8,
+    stock: 25,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAE_Rwqnd0cTeZXoU3WESkUG6VgmoCyMKmAG2FIAVLyQzQy5khFLBJrH0G_OYE-EX9rk_Egoc0wrGdOf67DZFKePiimwTK4OZjQHwdOexR8jzlYSzIjDwaDrBEj2O2oRkkeXyAB_H4mvT_UEo14tIwDqf0hX8DkooEWmrhabDZGwUADGlnYZHitDXvOesVEnJnW1-CCzdHCEOyw5_rerABJBApQcoK_jZnbLiM-nbjFMPiipssD3JIf",
+  },
+];
+
+export const curatedCollection: FurnitureProduct[] = [
+  {
+    id: "H8ATMkhYnI3",
+    title: "Miro Lounge Chair",
+    category: "chair",
+    price: 495,
+    description:
+      "A comfortable linen sofa with a clean modern silhouette and soft cushions.",
+    room: "living-room",
+    material: "Linen",
+    rating: 4.7,
+    stock: 14,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuACnNIVozCEz3raUV7y_yWmN_OBHGVKoRUa_tIqmzjvPjQ6U37f-rxpnf7LKac5Ki7HC1kscvqihqb0XNjEmYoRvdK0VVi7KEmC_x-IwFCCEvYBXZLT_U2K6Cbu6T0YY0bBCLQMOkd63sfEdHifmkiM3yJDZb2JICz4Lk0GXOKMqhY4BTcHqN_17jx9uqwhQQgGEHUgjcIH6PDjiZBxUrNICHsrueZAW3ePICuLqACrmCPNVn-skWmY",
+  },
+  {
+    id: "H8ATMkhYnIu",
+    title: "Linea Oak Coffee Table",
+    category: "table",
+    price: 680,
+    description:
+      "An elegant oval dining-room table offering comfortable seating and a softer silhouette.",
+    room: "living-room",
+    material: "Wood",
+    rating: 4.3,
+    stock: 25,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKTAYETR7b6LSXxgfErEQBb1dM7_sYUhaswSAI0KXkKBBS_aoprUn6v8LIle2wBNwMVtg0Z7yp1AnYIco46WA5B4mx2v96v4vktn1PwgB0sF-yYlmH6sU0kg8LLSWZQ7ve4pTXOnZAfCu0AzbXI1EAmctM_HLP6joSuEIAewz1IbPT85hA6HHQCMb0gQj9qFY5pqVaDSMrrfGqYeZqRywf358ys4H53HH0Q1xVWvziYolCNbk-ndZ4",
+  },
+  {
+    id: "G8ATMkhYnIu",
+    title: "Arco Dining Chair",
+    category: "chair",
+    price: 120,
+    description:
+      "A generously padded armchair designed to provide a soft and relaxing seating experience.",
+    room: "dining-room",
+    material: "wood",
+    rating: 4.8,
+    stock: 25,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjQo64E_FcpV5bdOiHrzvOmJllSGGINjv7pjVNnfZ0XCEYnsHjuURgKj9rrG1DHNavymvC2-8W9KWmopq6imIt0T6q6T-hJ_HzAEVJjeAkklilsqFHTUv9DHMNw3iqoWV2RTNodzun7tmokq_1xrXKLsJzExkW6v9ID8nms72-o2HA6MfrXCoyZm88q6WmUX0spxMRBZHPYort2RqWsIxiinv9EtvMUlVqVqpgovU1UMreX7jSfIuu",
+  },
+  {
+    id: "P8ATMkhYnIu",
+    title: "Noma Floor Lamp",
+    category: "lamp",
+    price: 320,
+    description:
+      "A modern glass globe lamp providing soft diffused lighting for contemporary spaces.",
+    room: "lighting",
+    material: "grass",
+    rating: 4.8,
+    stock: 25,
+    searchTerm: "modern linen sofa living-room",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAE_Rwqnd0cTeZXoU3WESkUG6VgmoCyMKmAG2FIAVLyQzQy5khFLBJrH0G_OYE-EX9rk_Egoc0wrGdOf67DZFKePiimwTK4OZjQHwdOexR8jzlYSzIjDwaDrBEj2O2oRkkeXyAB_H4mvT_UEo14tIwDqf0hX8DkooEWmrhabDZGwUADGlnYZHitDXvOesVEnJnW1-CCzdHCEOyw5_rerABJBApQcoK_jZnbLiM-nbjFMPiipssD3JIf",
   },
 ];

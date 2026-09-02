@@ -1,59 +1,30 @@
-import { ArrowDownZA, ArrowUpAZ, ListFilter, X } from "lucide-react";
+import { ListFilter, X } from "lucide-react";
 import { useState } from "react";
+import { CategoryFilter } from "./FilterSectionPage/CategoryFilter";
+import { RoomFilter } from "./FilterSectionPage/RoomFilter";
+import { MaterialFilter } from "./FilterSectionPage/MaterialsFilter";
+import { RatingFilter } from "./FilterSectionPage/RatingFilter";
+import { useFilterStore } from "../../store/filterStore";
 
-const categories = [
-  { id: "all", label: "All Furniture", value: "all" },
-  { id: "seating", label: "Sofa & Chairs", value: "seating" },
-  { id: "tables", label: "Tables", value: "tables" },
-  { id: "bed", label: "Beds", value: "bed" },
-  { id: "lamp", label: "Lamps", value: "lamp" },
-];
-
-const rooms = [
-  { id: "living-room", label: "Living Room", value: "living-room" },
-  { id: "dining-room", label: "Dining Room", value: "dining-room" },
-  { id: "bedroom", label: "Bedroom", value: "bedroom" },
-  { id: "lighting", label: "Lighting", value: "lighting" },
-];
-
-const materials = [
-  "Wood",
-  "Velvet",
-  "Metal",
-  "Glass",
-  "Oak",
-  "Fabric",
-  "Linen",
-  "Ceramic",
-];
-
-const ratings = [
-  {
-    id: "higher",
-    label: "Higher to Lower",
-    value: "higher",
-    logo: <ArrowDownZA size={18} />,
-  },
-  {
-    id: "lower",
-    label: "Lower to Higher",
-    value: "lower",
-    logo: <ArrowUpAZ size={18} />,
-  },
-];
-
-const FilterSection = () => {
+export const FilterSection = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { clearFilters } = useFilterStore();
+
   return (
     <section className="relative lg:w-1/5">
       {/* DESKTOP */}
       <div className="max-tablet:hidden">
-        <div className="sticky top-0 left-0 flex flex-col gap-4">
+        <div className="sticky top-0 left-0 flex flex-col pb-4 gap-4">
           <CategoryFilter />
           <RoomFilter />
           <RatingFilter />
           <MaterialFilter />
-          <PriceFilter />
+          <button
+            onClick={clearFilters}
+            className="px-3 py-2 font-bold rounded cursor-pointer font-body bg-primary text-accent-foreground active:scale-95 transition-all duration-300 hover:-translate-y-1 hover:bg-accent"
+          >
+            Reset Filter
+          </button>
         </div>
       </div>
 
@@ -81,113 +52,21 @@ const FilterSection = () => {
           }
         `}
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 pb-4 gap-4">
             <CategoryFilter />
             <RoomFilter />
             <RatingFilter />
             <MaterialFilter />
-            <PriceFilter />
+            <button
+              onClick={clearFilters}
+              className="px-3 py-2 font-bold font-body cursor-pointer  rounded bg-primary text-accent-foreground active:scale-95 transition-all duration-300 hover:-translate-y-1 hover:bg-accent"
+            >
+              Reset Filter
+            </button>
           </div>
         </div>
       </div>
     </section>
-  );
-};
-
-const CategoryFilter = () => {
-  return (
-    <div className="filter-container">
-      <h2>CATEGORY</h2>
-
-      {categories.map((category) => (
-        <div className="grouped-input" key={category.id}>
-          <input
-            className="filter-input"
-            type="radio"
-            name="category"
-            id={category.id}
-            value={category.value}
-          />
-
-          <label className="filter-label" htmlFor={category.id}>
-            {category.label}
-          </label>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const RoomFilter = () => {
-  return (
-    <div className="filter-container">
-      <h2>ROOM</h2>
-
-      {rooms.map((room) => (
-        <div className="grouped-input" key={room.id}>
-          <input
-            className="filter-input"
-            type="radio"
-            name="room"
-            id={room.id}
-            value={room.value}
-          />
-
-          <label className="filter-label" htmlFor={room.id}>
-            {room.label}
-          </label>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const RatingFilter = () => {
-  return (
-    <div className="filter-container">
-      <h2>RATINGS</h2>
-      {ratings.map((rating) => (
-        <div key={rating.id} className="grouped-input">
-          <input
-            type="radio"
-            name="rating"
-            id={rating.id}
-            value={rating.value}
-            className="filter-input"
-          />
-          <div className="flex items-center gap-2">
-            <label htmlFor={rating.id} className="filter-label">
-              {rating.label}
-            </label>
-            <span>{rating.logo}</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const MaterialFilter = () => {
-  return (
-    <div className="filter-container">
-      <h2>MATERIAL</h2>
-
-      <div className="flex w-full lg:w-48 flex-wrap gap-2">
-        {materials.map((material) => (
-          <button key={material} type="button" className="filter-btn">
-            {material}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const PriceFilter = () => {
-  return (
-    <div className="filter-container">
-      <h2>PRICE RANGE</h2>
-    </div>
   );
 };
 

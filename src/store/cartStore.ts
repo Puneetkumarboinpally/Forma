@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import type { FurnitureProduct } from "../data/products";
 import { persist } from "zustand/middleware";
-import { Car } from "lucide-react";
 
 type CartItem = {
   product: FurnitureProduct;

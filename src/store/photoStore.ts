@@ -31,7 +31,7 @@ export const usePhotoStore = create<PhotoStore>((set) => ({
       set({
         photos: data.results,
       });
-      console.log(data)
+      console.log(data);
     } catch (error) {
       if (error instanceof Error) {
         set({ error: error.message });
