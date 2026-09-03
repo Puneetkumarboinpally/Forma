@@ -29,7 +29,7 @@ const WishlistPage = () => {
           <div>
             <h2 className="font-body font-bold text-3xl">My Wishlist</h2>
             <p className="font-body font-medium text-muted">
-              {wishlistCart.length}{" "}
+              {wishlistCart.length}
               {wishlistCart.length === 1 ? "item" : "items"} saved
             </p>
           </div>
