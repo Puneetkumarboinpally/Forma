@@ -52,7 +52,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     hover:-translate-y-1
     hover:shadow-xl"
     >
-      <div className="h-70 relative w-full overflow-hidden group">
+      <div className="max-phone:h-40 h-70 relative w-full overflow-hidden group">
         <img
           src={product.img}
           alt={product.title}
@@ -92,12 +92,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
           View Full Details
         </Link>
       </div>
-      <div className="flex flex-col gap-4 p-2 flex-1">
+      <div className="flex flex-col gap-2 lg:gap-4 p-2 flex-1">
         <div className="flex px-2">
-          <h3 className="font-display text-2xl font-bold ">{product.title}</h3>
+          <h3 className="max-phone:text-xl text-2xl font-display font-bold ">
+            {product.title}
+          </h3>
         </div>
         <div className="phone:flex justify-between items-center px-2 mt-auto">
-          <p className="font-body text-xl font-semibold">£{product.price}</p>
+          <p className="max-phone:text-lg text-xl font-body font-semibold">
+            £{product.price}
+          </p>
           <p className="font-body font-medium">★★★★★ {product.rating}</p>
         </div>
         <div className="flex flex-col gap-2 px-2 mt-auto">

@@ -67,7 +67,7 @@ const ProductCollection = () => {
       </div>
 
       {/* PRODUCTS COLLECTION */}
-      <div className="phone:grid max-tablet:grid-cols-2 items-stretch lg:grid-cols-3 gap-4 p-4">
+      <div className="grid phone:grid-cols-2 max-tablet:grid-cols-2 items-stretch lg:grid-cols-3 gap-4 lg:p-4">
         {sortedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
