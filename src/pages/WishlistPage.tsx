@@ -9,7 +9,7 @@ const WishlistPage = () => {
   return (
     <section className="min-h-screen">
       {wishlistCart.length === 0 ? (
-        <div className="h-screen flex flex-col justify-center items-center bg-surface p-8">
+        <div className="h-screen flex flex-col justify-center items-center bg-surface p-8 mt-14">
           <h1 className="font-body font-bold text-3xl mb-4">
             Your Wishlist is Empty
           </h1>
@@ -29,7 +29,7 @@ const WishlistPage = () => {
           <div>
             <h2 className="font-body font-bold text-3xl">My Wishlist</h2>
             <p className="font-body font-medium text-muted">
-              {wishlistCart.length}{" "}
+              {wishlistCart.length}
               {wishlistCart.length === 1 ? "item" : "items"} saved
             </p>
           </div>

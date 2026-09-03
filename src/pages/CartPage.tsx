@@ -8,7 +8,7 @@ const CartPage = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen px-6 pt-16 laptop:px-8 laptop:pt-20">
+    <section className="relative min-h-screen px-6 pt-16 laptop:px-8 laptop:pt-20 mt-14">
       {cart.length === 0 ? (
         <div className="flex h-screen flex-col items-center justify-center gap-4">
           <h1 className="font-body text-4xl font-bold">Your Cart is Empty</h1>

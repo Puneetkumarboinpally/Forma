@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { usePhotoStore } from "../store/photoStore";
 import PhotosCard from "../components/PhotosCard";
+import { useNavigate } from "react-router-dom";
 
 const DiningPage = () => {
+  const navigate = useNavigate();
   const { loading, error, photos, getPhotos } = usePhotoStore();
 
   useEffect(() => {
@@ -10,7 +12,7 @@ const DiningPage = () => {
   }, [getPhotos]);
 
   return (
-    <div className="h-full">
+    <div className="h-full mt-14">
       <section
         className="dining-hero
       flex justify-center items-center p-4 lg:p-8
@@ -40,7 +42,10 @@ const DiningPage = () => {
             </p>
           </div>
           <div>
-            <p className="font-body w-fit text-lg border-b font-medium cursor-pointer active:scale-95 transition-all duration-300 hover:text-accent">
+            <p
+              onClick={() => navigate("/collection")}
+              className="font-body w-fit text-lg border-b font-medium cursor-pointer active:scale-95 transition-all duration-300 hover:text-accent"
+            >
               View Full Collection &rarr;
             </p>
           </div>

@@ -96,7 +96,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className="flex px-2">
           <h3 className="font-display text-2xl font-bold ">{product.title}</h3>
         </div>
-        <div className="flex justify-between items-center px-2 mt-auto">
+        <div className="phone:flex justify-between items-center px-2 mt-auto">
           <p className="font-body text-xl font-semibold">£{product.price}</p>
           <p className="font-body font-medium">★★★★★ {product.rating}</p>
         </div>

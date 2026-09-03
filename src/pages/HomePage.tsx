@@ -7,7 +7,7 @@ import SubscribeSection from "../components/homepage/SubscribeSection";
 
 const HomePage = () => {
   return (
-    <div className="h-full">
+    <div className="h-full mt-14">
       <HeroSection />
       <HeroExploreSection />
       <CuratedSection />
