@@ -18,9 +18,11 @@ const Navbar = () => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
   return (
-    <div className="flex justify-between items-center 
+    <div
+      className="flex justify-between items-center 
     h-16 w-full p-4 fixed top-0 left-0 z-50
-    bg-surface border-b border-b-border">
+    bg-surface border-b border-b-border"
+    >
       {/* --- NAVBAR LOGO SECTION ---*/}
       <div className="flex items-center">
         <Link
@@ -38,7 +40,7 @@ const Navbar = () => {
             key={link.id}
             to={link.path}
             className={({ isActive }) =>
-              `nav-link-styles max-laptop:hidden ${isActive ? "text-accent" : "text-secondary"}`
+              `nav-link-styles max-laptop:hidden ${isActive ? "text-primary" : "text-secondary"}`
             }
           >
             {link.name}
@@ -106,6 +108,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label={isOpen ? "close menu" : "open menu"}
+            className="cursor-pointer"
           >
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -120,7 +123,7 @@ const Navbar = () => {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `nav-link-styles ${isActive ? "text-accent" : "text-secondary"}`
+                  `nav-link-styles ${isActive ? "text-surface" : "text-secondary"}`
                 }
               >
                 {link.name}
