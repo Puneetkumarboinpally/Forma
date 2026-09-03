@@ -47,7 +47,7 @@ const ProductDetailsPage = () => {
   };
 
   return (
-    <section className="min-h-screen p-4">
+    <section className="min-h-screen p-4 mt-14">
       <div>
         <BreadCrumb />
       </div>

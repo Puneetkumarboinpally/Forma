@@ -9,7 +9,7 @@ const WishlistPage = () => {
   return (
     <section className="min-h-screen">
       {wishlistCart.length === 0 ? (
-        <div className="h-screen flex flex-col justify-center items-center bg-surface p-8">
+        <div className="h-screen flex flex-col justify-center items-center bg-surface p-8 mt-14">
           <h1 className="font-body font-bold text-3xl mb-4">
             Your Wishlist is Empty
           </h1>

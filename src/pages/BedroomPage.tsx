@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import PhotosCard from "../components/PhotosCard";
 import { usePhotoStore } from "../store/photoStore";
+import { useNavigate } from "react-router-dom";
 
 const BedroomPage = () => {
+  const navigate = useNavigate();
   const { loading, error, photos, getPhotos } = usePhotoStore();
 
   useEffect(() => {
@@ -10,7 +12,7 @@ const BedroomPage = () => {
   }, [getPhotos]);
 
   return (
-    <div className="h-full">
+    <div className="h-full mt-14">
       <section
         className="bedroom-hero
       flex justify-center items-center p-4 lg:p-8
@@ -40,7 +42,10 @@ const BedroomPage = () => {
             </p>
           </div>
           <div>
-            <p className="font-body w-fit text-lg border-b font-medium cursor-pointer active:scale-95 transition-all duration-300 hover:text-accent">
+            <p
+              onClick={() => navigate("/collection")}
+              className="font-body w-fit text-lg border-b font-medium cursor-pointer active:scale-95 transition-all duration-300 hover:text-accent"
+            >
               View Full Collection &rarr;
             </p>
           </div>

@@ -13,7 +13,7 @@ const OrderConfirmedPage = () => {
     });
   }, []);
   return (
-    <section className="min-h-screen flex justify-center items-center p-4">
+    <section className="min-h-screen flex justify-center items-center p-4 mt-14">
       <div className="flex flex-col gap-2 items-center">
         <span>
           <BadgeCheck size={80} className="text-green-500" />
