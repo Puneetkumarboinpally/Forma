@@ -52,7 +52,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     hover:-translate-y-1
     hover:shadow-xl"
     >
-      <div className="max-phone:h-40 h-70 relative w-full overflow-hidden group">
+      <div className="max-phone:h-50 h-70 relative w-full overflow-hidden group">
         <img
           src={product.img}
           alt={product.title}
