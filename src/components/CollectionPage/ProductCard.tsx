@@ -38,16 +38,17 @@ const ProductCard = ({ product }: ProductCardProps) => {
   }, [added]);
 
   return (
-    <div
+    <Link
+      to={`/product-details-page/${product.id}`}
       className="overflow-hidden flex h-full flex-col
     rounded-lg
     border
     border-border
     bg-surface
     shadow-lg
-
     transition-all
     duration-300
+    cursor-pointer
 
     hover:-translate-y-1
     hover:shadow-xl"
@@ -149,7 +150,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           Add to Cart
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
