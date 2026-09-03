@@ -172,7 +172,7 @@ const ProductDetailsPage = () => {
               </button>
             </div>
           </div>
-          {/* ---- DELIVERY SECTION --- */}
+          {/* ----- DELIVERY SECTION ---- */}
           <div>
             <h2 className="font-body font-semibold text-xl mb-2">DELIVERY</h2>
             <p className="font-body font-medium text-secondary text-xl w-full max-w-xl">
